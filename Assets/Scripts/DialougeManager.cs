@@ -28,7 +28,7 @@ public class DialougeManager : MonoBehaviour
         //messaggio
 
         //Blocco Input
-        FindAnyObjectByType<InputBlock>().DisableInput();
+        InputSystem.playerInputEnabled = false;
         //Avvio l'animazione
         animator.SetBool("IsOpen", true);
         //Metto il nome del personaggio che parla nel popup
@@ -40,8 +40,6 @@ public class DialougeManager : MonoBehaviour
         {
             senteces.Enqueue(sentence);
         }
-
-        DisplayNextSentence();
     }
     public void DisplayNextSentence()
     {
@@ -72,7 +70,8 @@ public class DialougeManager : MonoBehaviour
     void EndDialouge()
     {
         //Sblocca l'input
-        FindAnyObjectByType<InputBlock>().EnableInput();
+        InputSystem.dialogueEnabled = false;
+        InputSystem.playerInputEnabled = true;
         //Animazione di chiusura
         animator.SetBool("IsOpen", false);
     }
