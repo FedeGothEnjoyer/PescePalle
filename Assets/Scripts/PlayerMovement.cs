@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -20,7 +21,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (Input.GetMouseButtonDown(0))
+        bool isInputEnable = FindAnyObjectByType<InputBlock>().isInputEnble;
+
+		if (Input.GetMouseButtonDown(0) && isInputEnable)
 		{
             targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             render.flipX = targetPos.x < transform.position.x;

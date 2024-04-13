@@ -8,6 +8,8 @@ public class InteractableBehaviour : MonoBehaviour
 	[SerializeField] Sprite notSelected;
 	[SerializeField] Sprite selected;
 
+	public Dialouge dialouge;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -26,7 +28,6 @@ public class InteractableBehaviour : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		//codice quando l'oggetto viene premuto
-		Debug.Log("cazzo premi");
-	}
+        FindAnyObjectByType<DialougeManager>().StartDialouge(dialouge);
+    }
 }
