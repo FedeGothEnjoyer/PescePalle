@@ -51,8 +51,9 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckForWall()
 	{
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, -((Vector2)transform.position - targetPos).normalized, 10f, LayerMask.GetMask("walls"));
-        if (ray.collider != null && ray.distance < ((Vector2)transform.position - targetPos).magnitude)
+        var collider = GetComponent<BoxCollider2D>();
+        RaycastHit2D ray = Physics2D.BoxCast(transform.position, collider.size, transform.rotation.z, -((Vector2)transform.position - targetPos).normalized, 10f, LayerMask.GetMask("walls"));
+        if (ray.collider != null && ray.distance < ((Vector2)transform.position - targetPos).magnitude && (targetPos-ray.point).sqrMagnitude < (targetPos-(Vector2)transform.position).sqrMagnitude)
         {
             var vec = ray.point - (Vector2)transform.position;
             var vec2 = Vector2.ClampMagnitude(vec, wallStopRange);

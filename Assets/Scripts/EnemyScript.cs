@@ -8,10 +8,13 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] float speed;
     [SerializeField] float chaseDistance;
+    [SerializeField] float wallStopRange;
+    [SerializeField] float scoutingRange;
     [Header("Debug")]
     [SerializeField] float time_changePosition;
     private float current_time;
     private Vector2 startPos;
+    
 
     private void OnEnable()
     {
@@ -42,12 +45,16 @@ public class EnemyScript : MonoBehaviour
     void ChasePlayer()
     {
         StopAllCoroutines();
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        Vector2 targetPos = target.transform.position;
+        CheckForWall(ref targetPos, true);
+        transform.position = Vector2.Lerp(transform.position, targetPos, speed * Time.deltaTime);
+
     }
     void MoveRandom()
     {
-        Vector2 randomDirection = (Random.insideUnitCircle * 1) + startPos;
+        Vector2 randomDirection = (Random.insideUnitCircle * scoutingRange) + startPos;
         StopAllCoroutines();
+        CheckForWall(ref randomDirection, false);
         StartCoroutine(MoveToPoint(randomDirection));
     }
 
@@ -55,8 +62,23 @@ public class EnemyScript : MonoBehaviour
     {
         while ((Vector2)transform.position != targetPosition)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            transform.position = Vector2.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
             yield return null;
+        }
+    }
+
+    void CheckForWall(ref Vector2 targetPosition, bool chasing)
+    {
+        var collider = GetComponent<BoxCollider2D>();
+        RaycastHit2D ray = Physics2D.BoxCast(transform.position,collider.size,transform.rotation.z, -((Vector2)transform.position - targetPosition).normalized, 10f, LayerMask.GetMask("walls"));
+        if (ray.collider != null && ray.distance < ((Vector2)transform.position - targetPosition).magnitude && (targetPosition - ray.point).sqrMagnitude < (targetPosition - (Vector2)transform.position).sqrMagnitude)
+        {
+            var vec = ray.point - (Vector2)transform.position;
+            var vec2 = Vector2.ClampMagnitude(vec, wallStopRange);
+            targetPosition = (Vector2)transform.position + vec - vec2;
+
+            if(chasing) startPos = ray.point;
+
         }
     }
 }
