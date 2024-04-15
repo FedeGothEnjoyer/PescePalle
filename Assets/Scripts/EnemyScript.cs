@@ -11,35 +11,52 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] float wallStopRange;
     [SerializeField] float scoutingRange;
     [SerializeField] float turnSpeed;
+    public static int isChasing; 
     [Header("Debug")]
     [SerializeField] float time_changePosition;
     private float current_time;
     private Vector2 startPos;
-    
+
+    //Per evitare che 'isChasing' incrementi o decrementi ad ogni frame
+    private bool chased = false;
 
     private void OnEnable()
     {
         startPos = transform.position;
+        isChasing = 0;
     }
 
     void Update()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, target.transform.position);
 
-        if (distanceToPlayer <= chaseDistance)
+        if (InputSystem.enemyMovementEnabled)
         {
-            ChasePlayer();
-        }
-        else
-        {
-            if (current_time < time_changePosition)
+            if (distanceToPlayer <= chaseDistance)
             {
-                current_time += Time.deltaTime;
+                if (!chased)
+                {
+                    chased = true;
+                    isChasing += 1;
+                }
+                ChasePlayer();
             }
             else
             {
-                MoveRandom();
-                current_time = 0.0f;
+                if(chased)
+                {
+                    chased = false;
+                    isChasing -= 1;
+                }
+                if (current_time < time_changePosition)
+                {
+                    current_time += Time.deltaTime;
+                }
+                else
+                {
+                    MoveRandom();
+                    current_time = 0.0f;
+                }
             }
         }
     }
@@ -63,7 +80,7 @@ public class EnemyScript : MonoBehaviour
     {
         while ((Vector2)transform.position != targetPosition)
         {
-            transform.position = Vector2.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
             yield return null;
         }
     }
@@ -78,7 +95,7 @@ public class EnemyScript : MonoBehaviour
             var vec2 = Vector2.ClampMagnitude(vec, wallStopRange);
             targetPosition = (Vector2)transform.position + vec - vec2;
 
-            if(chasing) startPos = ray.point;
+            //if(chasing) startPos = ray.point;
 
         }
     }

@@ -7,6 +7,7 @@ public class InputSystem : MonoBehaviour
     static public PlayerMovement player;
     static public bool playerInputEnabled;
     static public bool dialogueEnabled;
+    static public bool enemyMovementEnabled;
     static public bool worldEnabled;
 
     DialougeManager dialogue;
@@ -15,6 +16,7 @@ public class InputSystem : MonoBehaviour
     void Start()
     {
         playerInputEnabled = true;
+        enemyMovementEnabled = true;
         dialogueEnabled = false;
         worldEnabled = true;
         player = GetComponent<PlayerMovement>();
@@ -36,6 +38,7 @@ public class InputSystem : MonoBehaviour
                     if (objectClicked = b.Clicked(mousePos))
                     {
                         dialogueEnabled = true;
+                        enemyMovementEnabled = false;
                         break;
                     }
                 }

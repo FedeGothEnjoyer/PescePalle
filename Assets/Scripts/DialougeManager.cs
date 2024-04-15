@@ -8,61 +8,53 @@ using UnityEngine.UI;
 
 public class DialougeManager : MonoBehaviour
 {
-    //Testi
     public Text nameText;
     public Text dialougeText;
-    //Animazione
+
     public Animator animator;
-    //Frasi
-    private Queue<string> senteces;
+
+    private Queue<string> sentences;
 
     void Start()
-    {//Init della queue
-        senteces = new Queue<string>();
+    {
+        sentences = new Queue<string>();
     }
 
     public void StartDialouge(Dialouge dialouge)
     {
-        //FIX : TODO : fare in modo che ci sia un delay di chiamata della funzione dopo il click
-        //all'interagibile in modo tale che prima venga spostato il pesce e poi venga fatto vedere il popup del
-        //messaggio
+        if (EnemyScript.isChasing != 0)
+            return;
 
-        //Blocco Input
         InputSystem.playerInputEnabled = false;
         //Avvio l'animazione
         animator.SetBool("IsOpen", true);
-        //Metto il nome del personaggio che parla nel popup
         nameText.text = dialouge.name;
 
-        senteces.Clear();
-        //Salvo le frasi
+        sentences.Clear();
         foreach (string sentence in dialouge.sentences)
         {
-            senteces.Enqueue(sentence);
+            sentences.Enqueue(sentence);
         }
     }
     public void DisplayNextSentence()
     {
-        if (senteces.Count == 0)
-        {//Fine se finisco le frasi
+        if (sentences.Count == 0)
+        {
             EndDialouge();
             return;
         }
-        //Prendo la frase e avvio una co-routine, per fare l'animazione di stampa
-        string sentence = senteces.Dequeue();
+
+        string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
 
     IEnumerator TypeSentence(string sentence)
     {
-        //Animazione di stampa
-        //Co-routine perchè così posso interrompere facilmente l'anim.
         dialougeText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             dialougeText.text += letter;
-            //yield = aspetto un frame
             yield return null;
         }
     }
@@ -72,6 +64,7 @@ public class DialougeManager : MonoBehaviour
         //Sblocca l'input
         InputSystem.dialogueEnabled = false;
         InputSystem.playerInputEnabled = true;
+        InputSystem.enemyMovementEnabled = true;
         //Animazione di chiusura
         animator.SetBool("IsOpen", false);
     }
