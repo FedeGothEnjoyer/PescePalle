@@ -597,6 +597,7 @@ GameObject:
   - component: {fileID: 618677990}
   - component: {fileID: 618677989}
   - component: {fileID: 618677992}
+  - component: {fileID: 618677993}
   m_Layer: 0
   m_Name: Polpo
   m_TagString: Untagged
@@ -672,6 +673,7 @@ MonoBehaviour:
   chaseDistance: 3
   wallStopRange: 1
   scoutingRange: 2
+  turnSpeed: 0
   time_changePosition: 2
 --- !u!4 &618677991
 Transform:
@@ -687,8 +689,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &618677992
-BoxCollider2D:
+--- !u!58 &618677992
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -701,18 +703,29 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
-    newSize: {x: 0.16, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
-  m_EdgeRadius: 0
+  m_Radius: 0.62
+--- !u!95 &618677993
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618677988}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86f1393a9aba0e64d82eca3db72ed80f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &642065462
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +827,8 @@ MonoBehaviour:
   maxSpeed: 7
   itemStopRange: 1.5
   wallStopRange: 0.5
+  dashSpeed: 17
+  dashRange: 3
   targetPos: {x: 0, y: 0}
 --- !u!114 &642065466
 MonoBehaviour:
@@ -827,8 +842,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd435b87142a9544b01368681ac4b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &642065467
-BoxCollider2D:
+--- !u!58 &642065467
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -840,19 +855,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0077964067, y: 0.039868116}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0.10524583, y: 0.03899783}
   serializedVersion: 2
-  m_Size: {x: 0.8804567, y: 0.55809903}
-  m_EdgeRadius: 0
+  m_Radius: 0.31118757
 --- !u!1 &775913709
 GameObject:
   m_ObjectHideFlags: 0

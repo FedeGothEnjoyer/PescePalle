@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] float chaseDistance;
     [SerializeField] float wallStopRange;
     [SerializeField] float scoutingRange;
+    [SerializeField] float turnSpeed;
     [Header("Debug")]
     [SerializeField] float time_changePosition;
     private float current_time;
@@ -69,8 +70,8 @@ public class EnemyScript : MonoBehaviour
 
     void CheckForWall(ref Vector2 targetPosition, bool chasing)
     {
-        var collider = GetComponent<BoxCollider2D>();
-        RaycastHit2D ray = Physics2D.BoxCast(transform.position,collider.size,transform.rotation.z, -((Vector2)transform.position - targetPosition).normalized, 10f, LayerMask.GetMask("walls"));
+        var collider = GetComponent<CircleCollider2D>();
+        RaycastHit2D ray = Physics2D.CircleCast(transform.position,collider.radius, -((Vector2)transform.position - targetPosition).normalized, 10f, LayerMask.GetMask("walls"));
         if (ray.collider != null && ray.distance < ((Vector2)transform.position - targetPosition).magnitude && (targetPosition - ray.point).sqrMagnitude < (targetPosition - (Vector2)transform.position).sqrMagnitude)
         {
             var vec = ray.point - (Vector2)transform.position;

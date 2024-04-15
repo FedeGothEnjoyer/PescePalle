@@ -7,6 +7,7 @@ public class InputSystem : MonoBehaviour
     static public PlayerMovement player;
     static public bool playerInputEnabled;
     static public bool dialogueEnabled;
+    static public bool worldEnabled;
 
     DialougeManager dialogue;
 
@@ -15,6 +16,7 @@ public class InputSystem : MonoBehaviour
     {
         playerInputEnabled = true;
         dialogueEnabled = false;
+        worldEnabled = true;
         player = GetComponent<PlayerMovement>();
         dialogue = FindAnyObjectByType<DialougeManager>();
     }
@@ -49,7 +51,12 @@ public class InputSystem : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+			if (playerInputEnabled)
+			{
+                player.Dash(mousePos);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
