@@ -64,7 +64,10 @@ public class InputSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            if (playerInputEnabled)
+            {
+                player.Inflate();
+            }
         }
     }
 }
