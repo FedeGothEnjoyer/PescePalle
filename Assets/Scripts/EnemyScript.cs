@@ -16,6 +16,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] float time_changePosition;
     private float current_time;
     private Vector2 startPos;
+    private bool canChase = true;
 
     //Per evitare che 'isChasing' incrementi o decrementi ad ogni frame
     private bool chased = false;
@@ -32,7 +33,7 @@ public class EnemyScript : MonoBehaviour
 
         if (InputSystem.enemyMovementEnabled)
         {
-            if (distanceToPlayer <= chaseDistance)
+            if (distanceToPlayer <= chaseDistance && canChase)
             {
                 if (!chased)
                 {
@@ -43,6 +44,10 @@ public class EnemyScript : MonoBehaviour
             }
             else
             {
+                if(PlayerMovement.isInflated == false)
+                {
+                    canChase = true;
+                }
                 if(chased)
                 {
                     chased = false;
@@ -97,6 +102,14 @@ public class EnemyScript : MonoBehaviour
 
             //if(chasing) startPos = ray.point;
 
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == 6 && PlayerMovement.isInflated)
+        {
+            MoveRandom();
+            canChase = false;
         }
     }
 }
