@@ -17,6 +17,7 @@ public class EnemyScript : MonoBehaviour
     private float current_time;
     private Vector2 startPos;
     private bool canChase = true;
+    private bool isColliding = false;
 
     //Per evitare che 'isChasing' incrementi o decrementi ad ogni frame
     private bool chased = false;
@@ -106,10 +107,28 @@ public class EnemyScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 6 && PlayerMovement.isInflated)
+        if (collision.gameObject.layer == 6 && PlayerMovement.isInflated)
         {
+            isColliding = true;
             MoveRandom();
             canChase = false;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 6 && PlayerMovement.isInflated && !isColliding)
+        {
+            isColliding = true;
+            MoveRandom();
+            canChase = false;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            isColliding = false;
+            // Aggiungi qui qualsiasi altra logica che vuoi eseguire quando la collisione termina
         }
     }
 }
