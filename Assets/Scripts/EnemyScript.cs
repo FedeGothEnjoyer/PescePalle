@@ -16,6 +16,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] float time_changePosition;
     private float current_time;
     private Vector2 startPos;
+    private Vector2 targetPos;
     private bool canChase = true;
     private bool isColliding = false;
 
@@ -69,7 +70,7 @@ public class EnemyScript : MonoBehaviour
     void ChasePlayer()
     {
         StopAllCoroutines();
-        Vector2 targetPos = target.transform.position;
+        targetPos = target.transform.position;
         CheckForWall(ref targetPos, true);
         transform.position = Vector2.Lerp(transform.position, targetPos, speed * Time.deltaTime);
 
@@ -87,6 +88,15 @@ public class EnemyScript : MonoBehaviour
         while ((Vector2)transform.position != targetPosition)
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    IEnumerator MoveToPoint_Lerp(Vector2 targetPosition)
+    {
+        while ((Vector2)transform.position != targetPosition)
+        {
+            transform.position = Vector2.Lerp(transform.position, targetPosition, 1 * Time.deltaTime);
             yield return null;
         }
     }
@@ -111,6 +121,7 @@ public class EnemyScript : MonoBehaviour
         {
             isColliding = true;
             MoveRandom();
+
             canChase = false;
         }
     }
@@ -120,6 +131,7 @@ public class EnemyScript : MonoBehaviour
         {
             isColliding = true;
             MoveRandom();
+
             canChase = false;
         }
     }
@@ -128,7 +140,6 @@ public class EnemyScript : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             isColliding = false;
-            // Aggiungi qui qualsiasi altra logica che vuoi eseguire quando la collisione termina
         }
     }
 }

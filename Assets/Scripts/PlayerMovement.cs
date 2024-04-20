@@ -27,11 +27,13 @@ public class PlayerMovement : MonoBehaviour
     private float startMaxSpeed;
     private float startDashSpeed;
 
-    [SerializeField] Vector2 targetPos;
+    public static Vector2 targetPos;
 
     SpriteRenderer render;
     [SerializeField] Sprite normalFish;
     [SerializeField] Sprite inflatedFish;
+    [SerializeField] Sprite inflating;
+    [SerializeField] Sprite outflating;
 
     // Start is called before the first frame update
     void Start()
@@ -141,9 +143,10 @@ public class PlayerMovement : MonoBehaviour
     {
         isInflated = true;
 
+
         InflateCooldownTimer = 0;
         InflateDurationTimer = 0;
-        render.sprite = inflatedFish;
+        render.sprite = inflating;
         maxSpeed *= infl_speed_reduce;
         speed *= infl_speed_reduce;
         dashSpeed = 0;
