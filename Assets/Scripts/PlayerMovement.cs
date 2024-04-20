@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float dashFrequency = 3f;
     [SerializeField] float inflateDuration = 5f;
     [SerializeField] float inflateCooldown = 3f;
+    [SerializeField] ParticleSystem dashEffect;
 
     private float dashTimer = 0f;
     private float InflateDurationTimer = 0f;
@@ -30,16 +31,14 @@ public class PlayerMovement : MonoBehaviour
     public static Vector2 targetPos;
 
     SpriteRenderer render;
-    [SerializeField] Sprite normalFish;
-    [SerializeField] Sprite inflatedFish;
-    [SerializeField] Sprite inflating;
-    [SerializeField] Sprite outflating;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         targetPos = transform.position;
         render = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         startSpeed = speed;
         startMaxSpeed = maxSpeed;
         startDashSpeed = dashSpeed;
@@ -122,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
             targetPos = vec + (Vector2)transform.position;
             render.flipX = targetPos.x < transform.position.x;
             dashing = true;
+            Instantiate(dashEffect, transform.position, Quaternion.identity, transform);
 
             CheckForWall();
         }
@@ -146,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
 
         InflateCooldownTimer = 0;
         InflateDurationTimer = 0;
-        render.sprite = inflating;
+        animator.Play("plrAttackOpn");
         maxSpeed *= infl_speed_reduce;
         speed *= infl_speed_reduce;
         dashSpeed = 0;
@@ -158,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
 
         InflateCooldownTimer = 0;
         InflateDurationTimer = 0;
-        render.sprite = normalFish;
+        animator.Play("plrAttackExit");
         maxSpeed = startMaxSpeed;
         speed = startSpeed;
         dashSpeed = startDashSpeed;
