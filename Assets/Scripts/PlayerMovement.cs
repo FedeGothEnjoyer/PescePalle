@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float dashTimer = 0f;
     private float InflateDurationTimer = 0f;
-    private float InflateCooldownTimer = 0f;
+    private float InflateCooldownTimer;
 
     bool dashing = false;
     static public bool isInflated = false;
@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         startSpeed = speed;
         startMaxSpeed = maxSpeed;
         startDashSpeed = dashSpeed;
+        InflateCooldownTimer = inflateCooldown;
     }
     // Update is called once per frame
     void Update()

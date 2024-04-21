@@ -23,6 +23,7 @@ public class ChangeScene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        EnemyScript.isChasing = 0;
         SceneManager.LoadScene(target.name);
     }
 }

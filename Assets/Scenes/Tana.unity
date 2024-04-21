@@ -1200,7 +1200,7 @@ GameObject:
   - component: {fileID: 1897253907}
   - component: {fileID: 1897253908}
   m_Layer: 0
-  m_Name: tartarugaAnziana_notSel
+  m_Name: tartarugaAnziana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1246,7 +1246,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e5c0836a55ef9e34c873c231d91db0e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 331a3400aff91e540b87768efbc2d0cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1283,23 +1283,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e66d44271f7ce4e914b8528172c082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notSelected: {fileID: 21300000, guid: e5c0836a55ef9e34c873c231d91db0e4, type: 3}
-  selected: {fileID: 21300000, guid: d4e725ff2545bda47be5901724f7bdf7, type: 3}
+  notSelected: {fileID: 21300000, guid: 331a3400aff91e540b87768efbc2d0cc, type: 3}
+  selected: {fileID: 21300000, guid: 3e2a8dcb884667d4ca43db8e16460df1, type: 3}
   onClickEvent:
     m_PersistentCalls:
       m_Calls: []
   dialouge:
     name: Tartaruga Anziana
     sentences:
-    - Hey giovane! Finalmente ti sei svegliato.
-    - "Tu sei in gamba, e perci\xF2 hai bisogno di nutrirti. Non pensare a me.. me
-      la cavo anche senza!"
-    - In giro per i coralli trovari sicuramente qualche ottimo mollusco e gamberetto.
-      Sono molto belli e colorati, sicuramente li noterai la di fuori!
-    - "Stai attento per\xF2 hai pericoli, purtroppo non tutti i pesci sono amichevoli,
-      Fortunatamente sei in grado di gonfiarti e difenderti dai nemici, inoltre sei
-      talmente abile da fare dei bei scatti in avanti, wow!"
-    - "Ora basta chiacchere, \xE8 ora di andare!"
+    - Abbiamo finito il cibo.. Portane un po' per entrambi.
 --- !u!61 &1897253908
 BoxCollider2D:
   m_ObjectHideFlags: 0
