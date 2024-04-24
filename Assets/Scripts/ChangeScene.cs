@@ -26,6 +26,7 @@ public class ChangeScene : MonoBehaviour
         if(collision.gameObject.layer == 6)
         {
             EnemyScript.isChasing = 0;
+            PlayerMovement.isInflated = false;
             SceneManager.LoadScene(target.name);
         }
 

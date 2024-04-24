@@ -42,7 +42,6 @@ public class EnemyScript : MonoBehaviour
 
     void Update()
     {
-        SR.flipX = targetPos.x > transform.position.x;
         float distanceToPlayer = Vector2.Distance(transform.position, target.transform.position);
 
         if (InputSystem.enemyMovementEnabled)
@@ -84,6 +83,7 @@ public class EnemyScript : MonoBehaviour
     {
         StopAllCoroutines();
         targetPos = target.transform.position;
+        SR.flipX = targetPos.x > transform.position.x;
         CheckForWall(ref targetPos, true);
         transform.position = Vector2.Lerp(transform.position, targetPos, speed * Time.deltaTime);
 
@@ -91,6 +91,7 @@ public class EnemyScript : MonoBehaviour
     void MoveRandom()
     {
         Vector2 randomDirection = (Random.insideUnitCircle * scoutingRange) + startPos;
+        SR.flipX = randomDirection.x > transform.position.x;
         StopAllCoroutines();
         CheckForWall(ref randomDirection, false);
         StartCoroutine(MoveToPoint(randomDirection));
