@@ -1291,7 +1291,10 @@ MonoBehaviour:
   dialouge:
     name: Tartaruga Anziana
     sentences:
-    - Abbiamo finito il cibo.. Portane un po' per entrambi.
+    - Se ni' mondo esistesse un po' di bene
+    - E ognun si considerasse suo fratello
+    - Ci sarebbero meno pensieri e meno pene
+    - "E il mondo ne sarebbe assai pi\xF9 bello"
 --- !u!61 &1897253908
 BoxCollider2D:
   m_ObjectHideFlags: 0
