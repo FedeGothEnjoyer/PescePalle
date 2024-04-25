@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &345671807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4128384387632581213, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+  m_PrefabInstance: {fileID: 4128384387997735155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &722212382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,6 +1204,7 @@ GameObject:
   - component: {fileID: 1897253905}
   - component: {fileID: 1897253907}
   - component: {fileID: 1897253908}
+  - component: {fileID: 1897253909}
   m_Layer: 0
   m_Name: tartarugaAnziana
   m_TagString: Untagged
@@ -1246,7 +1252,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 331a3400aff91e540b87768efbc2d0cc, type: 3}
+  m_Sprite: {fileID: 7507377699173876706, guid: 756a162593db22c4e9f5bce038408b06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1283,18 +1289,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e66d44271f7ce4e914b8528172c082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notSelected: {fileID: 21300000, guid: 331a3400aff91e540b87768efbc2d0cc, type: 3}
-  selected: {fileID: 21300000, guid: 3e2a8dcb884667d4ca43db8e16460df1, type: 3}
+  target: {fileID: 345671807}
+  notSelected: {fileID: 9100000, guid: 0bdd1457761632f4e94b4c55990fe9e2, type: 2}
+  selected: {fileID: 9100000, guid: 97de3b26cfab47d48afa4dc7885e41af, type: 2}
   onClickEvent:
     m_PersistentCalls:
       m_Calls: []
   dialouge:
     name: Tartaruga Anziana
     sentences:
-    - Se ni' mondo esistesse un po' di bene
-    - E ognun si considerasse suo fratello
-    - Ci sarebbero meno pensieri e meno pene
-    - "E il mondo ne sarebbe assai pi\xF9 bello"
+    - Grande, hai portato il cibo!
+    - Uh oh.. Cosa sta succedendo?!
 --- !u!61 &1897253908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1321,6 +1326,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!95 &1897253909
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897253904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0bdd1457761632f4e94b4c55990fe9e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2033870088
 GameObject:
   m_ObjectHideFlags: 0

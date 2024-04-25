@@ -200,7 +200,6 @@ GameObject:
   - component: {fileID: 276746350}
   - component: {fileID: 276746349}
   - component: {fileID: 276746348}
-  - component: {fileID: 276746351}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -274,18 +273,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &276746351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276746347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb7db6839a5b2c459402c26e1b25b3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &830918483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -692,7 +679,7 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 11
       m_TileSpriteIndex: 11
-      m_TileMatrixIndex: 0
+      m_TileMatrixIndex: 7
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -802,7 +789,7 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 11
       m_TileSpriteIndex: 11
-      m_TileMatrixIndex: 0
+      m_TileMatrixIndex: 6
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -1463,7 +1450,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 1432774421400288080, guid: 7ab4147d851041541a837bddc453cd07, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 80
+  - m_RefCount: 78
     m_Data:
       e00: 1
       e01: 0
@@ -1483,7 +1470,7 @@ Tilemap:
       e33: 1
   - m_RefCount: 1
     m_Data:
-      e00: 1
+      e00: 1.0749999
       e01: 0
       e02: 0
       e03: 0
@@ -1524,7 +1511,7 @@ Tilemap:
       e02: 0
       e03: 0
       e10: 0
-      e11: 1.1624999
+      e11: 1.1624997
       e12: 0
       e13: 0
       e20: 0
@@ -1560,7 +1547,43 @@ Tilemap:
       e02: 0
       e03: 0
       e10: 0
-      e11: 1.2125002
+      e11: 1.2124996
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  - m_RefCount: 1
+    m_Data:
+      e00: 1.1749997
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1.2375
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  - m_RefCount: 1
+    m_Data:
+      e00: 1.1624999
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
       e12: 0
       e13: 0
       e20: 0
