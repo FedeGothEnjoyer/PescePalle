@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements.Experimental;
+using Pathfinding;
 
 public class EnemyScript : MonoBehaviour
 {
+    AIPath aiPath;
     private SpriteRenderer SR;
     private Animator animator;
     [SerializeField] Sprite pushedEnemy;
@@ -39,7 +41,7 @@ public class EnemyScript : MonoBehaviour
         isChasing = 0;
         normalEnemy = SR.sprite;
     }
-
+    
     void Update()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, target.transform.position);
@@ -53,7 +55,7 @@ public class EnemyScript : MonoBehaviour
                     chased = true;
                     isChasing += 1;
                 }
-                ChasePlayer();
+                aiPath.canMove = true;
             }
             else
             {
