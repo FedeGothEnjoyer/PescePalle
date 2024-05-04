@@ -22,7 +22,7 @@ public class DialougeManager : MonoBehaviour
 
     public void StartDialouge(Dialouge dialouge)
     {
-        if (EnemyScript.isChasing != 0)
+        if (EnemyManager.chasingCount != 0)
             return;
 
         InputSystem.playerInputEnabled = false;

@@ -5,17 +5,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Speed")]
     [SerializeField] float speed = 5f;
     [SerializeField] float maxSpeed = 5f;
     [SerializeField] float infl_speed_reduce = 0.4f;
-    [SerializeField] float itemStopRange = 2f;
-    [SerializeField] float wallStopRange = 2f;
+    [Header("Dash")]
     [SerializeField] float dashSpeed = 8f;
     [SerializeField] float dashRange = 3f;
+    [SerializeField] ParticleSystem dashEffect;
     [SerializeField] float dashFrequency = 3f;
+    [Header("Inflate")]
     [SerializeField] float inflateDuration = 5f;
     [SerializeField] float inflateCooldown = 3f;
-    [SerializeField] ParticleSystem dashEffect;
+    [Header("Stop Range")]
+    [SerializeField] float itemStopRange = 2f;
+    [SerializeField] float wallStopRange = 2f;
+
 
     private float dashTimer = 0f;
     private float InflateDurationTimer = 0f;
