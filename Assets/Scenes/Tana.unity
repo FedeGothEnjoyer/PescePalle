@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &345671807 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4128384387632581213, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
-  m_PrefabInstance: {fileID: 4128384387997735155}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &722212382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +1039,7 @@ Transform:
   - {fileID: 788774516}
   - {fileID: 723049316}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1545917983
 GameObject:
@@ -1289,7 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e66d44271f7ce4e914b8528172c082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 345671807}
+  target: {fileID: 0}
   notSelected: {fileID: 9100000, guid: 0bdd1457761632f4e94b4c55990fe9e2, type: 2}
   selected: {fileID: 9100000, guid: 97de3b26cfab47d48afa4dc7885e41af, type: 2}
   onClickEvent:
@@ -1429,7 +1424,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2033870092
 MonoBehaviour:
@@ -1534,6 +1529,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3305262609285092149, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305262609285092149, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4128384387632581186, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
       propertyPath: m_RootOrder
       value: 2

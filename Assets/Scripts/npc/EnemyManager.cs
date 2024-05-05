@@ -4,6 +4,7 @@ using UnityEngine;
 using Pathfinding;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.UIElements;
+using TMPro;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class EnemyManager : MonoBehaviour
     private float currentTimeChangeIdlePosition = 0f;
 
     Vector2 startPosition;
+    public Vector2 targetPositionEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +52,9 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        targetPositionEnemy = (target.transform.position - transform.position);
+        targetPositionEnemy.Normalize();
+
         if (InputSystem.enemyMovementEnabled)
         {
             aiPath.canMove = true;
@@ -58,6 +63,8 @@ public class EnemyManager : MonoBehaviour
             //chase player
             if (!forceIdle && distanceToPlayer <= chaseDistance && !forceIdleEveryone)
             {
+                spriteRenderer.flipX = target.transform.position.x > transform.position.x;
+
                 aiPath.canSearch = true;
                 if (!isChasing)
                 {
@@ -89,7 +96,6 @@ public class EnemyManager : MonoBehaviour
                 if (!PlayerMovement.isInflated)
                     forceIdle = false;
             }
-
         }
         else
         {
@@ -100,18 +106,19 @@ public class EnemyManager : MonoBehaviour
     public void IdlePosition()
     {
         Vector2 randomDirection = (Random.insideUnitCircle * scoutingRange) + startPosition;
+        spriteRenderer.flipX = randomDirection.x > transform.position.x;
         seeker.StartPath(transform.position, randomDirection);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6 && PlayerMovement.isInflated)
-            InflatedEffect(ref collision);
+            StartPushBack(targetPositionEnemy, pushBackDuration, pushBackMagnitude, pushBackMagnitudeReduceForPlayer, false);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6 && PlayerMovement.isInflated && !isColliding)
-            InflatedEffect(ref collision);
+            StartPushBack(targetPositionEnemy, pushBackDuration, pushBackMagnitude, pushBackMagnitudeReduceForPlayer, false);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -121,24 +128,22 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    void InflatedEffect(ref Collider2D collision)
+    public void StartPushBack(Vector2 direction, float duration, float magnitude, float playerMultiplier, bool isAttack)
     {
         isColliding = true;
-        Vector2 targetPositionEnemy = (collision.transform.position - transform.position);
-        Vector2 targetPositionPlayer = (transform.position - collision.transform.position);
-        targetPositionEnemy.Normalize();
-        targetPositionPlayer.Normalize();
-        StartCoroutine(PushBack(targetPositionEnemy, pushBackDuration, false));
-        StartCoroutine(PushBack(targetPositionPlayer, pushBackDuration, true));
+        StartCoroutine(PushBack(direction, duration, magnitude, playerMultiplier, false));
     }
 
-    IEnumerator PushBack(Vector2 direction, float duration, bool isPlayer)
+    IEnumerator PushBack(Vector2 direction, float duration, float magnitude, float playerMultiplier, bool isAttack)
     {
-        //FIX : TODO : fare in modo che il movimento si fermi quando la vittima incontra un muro
+        //FIX : TODO : fare in modo che il movimento si fermi quando la vittima incontra un muro (IsTouchingWall va ma il movimento non si ferma comunque)
 
-        IdlePosition(); //this tells the enemy to return at the starting point after the pushback
+        if (!isAttack) 
+        {
+            IdlePosition(); //this tells the enemy to return at the starting point after the pushback
+            forceIdle = true;
+        }
         isPushedBack = true;
-        forceIdle = true;
         animator.enabled = false;
         spriteRenderer.sprite = pushedBackEnemy;
 
@@ -146,23 +151,20 @@ public class EnemyManager : MonoBehaviour
         while (elapsedTime < duration)
         {
             float smoothSpeed;
-            if (!isPlayer)
+            //FABIO : L'idea era un Ease Out che dà l'idea della spinta, non credo sia venuto molto bene
+            //Questo script è collegato con "PescioloneAttack.cs" dacci un'occhiata
+            smoothSpeed = 1.0f - Mathf.Pow(1.0f - (elapsedTime / duration), 3.0f) * magnitude;
+            transform.Translate(direction * smoothSpeed * Time.deltaTime);
+            if (IsTouchingWall(transform))
             {
-                smoothSpeed = 1.0f - Mathf.Pow(1.0f - (elapsedTime / duration), 4.0f) * pushBackMagnitude;
-                transform.Translate(direction * smoothSpeed * Time.deltaTime);
-                if (IsTouchingWall(transform))
-                {
-                    break;
-                }
+                break;
             }
-            else
+
+            smoothSpeed = 1.0f - Mathf.Pow(1.0f - (elapsedTime / duration), 3.0f) * magnitude * playerMultiplier;
+            target.transform.Translate(-direction * smoothSpeed * Time.deltaTime);
+            if (IsTouchingWall(target.transform))
             {
-                smoothSpeed = 1.0f - Mathf.Pow(1.0f - (elapsedTime / duration), 4.0f) * pushBackMagnitude * pushBackMagnitudeReduceForPlayer;
-                target.transform.Translate(direction * smoothSpeed * Time.deltaTime);
-                if (IsTouchingWall(target.transform))
-                {
-                    break;
-                }
+                break;
             }
 
             elapsedTime += Time.deltaTime;
