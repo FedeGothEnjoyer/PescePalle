@@ -47,6 +47,7 @@ public class EnemyManager : MonoBehaviour
         rigidBody = transform.GetComponent<Rigidbody2D>();
         startPosition = transform.position;
         aiPath.canSearch = false;
+        GetComponent<AIDestinationSetter>().target = target.transform;
     }
 
     // Update is called once per frame
@@ -138,11 +139,9 @@ public class EnemyManager : MonoBehaviour
     {
         //FIX : TODO : fare in modo che il movimento si fermi quando la vittima incontra un muro (IsTouchingWall va ma il movimento non si ferma comunque)
 
-        if (!isAttack) 
-        {
-            IdlePosition(); //this tells the enemy to return at the starting point after the pushback
-            forceIdle = true;
-        }
+        target.GetComponent<PlayerMovement>().stunned = true;
+        target.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        target.GetComponent<Rigidbody2D>().velocity = direction * playerMultiplier * magnitude;
         isPushedBack = true;
         animator.enabled = false;
         spriteRenderer.sprite = pushedBackEnemy;
@@ -153,6 +152,7 @@ public class EnemyManager : MonoBehaviour
             float smoothSpeed;
             //FABIO : L'idea era un Ease Out che dà l'idea della spinta, non credo sia venuto molto bene
             //Questo script è collegato con "PescioloneAttack.cs" dacci un'occhiata
+            
             smoothSpeed = 1.0f - Mathf.Pow(1.0f - (elapsedTime / duration), 3.0f) * magnitude;
             transform.Translate(direction * smoothSpeed * Time.deltaTime);
             if (IsTouchingWall(transform))
@@ -160,18 +160,28 @@ public class EnemyManager : MonoBehaviour
                 break;
             }
 
-            smoothSpeed = 1.0f - Mathf.Pow(1.0f - (elapsedTime / duration), 3.0f) * magnitude * playerMultiplier;
+            
+            /*smoothSpeed = 1.0f - Mathf.Pow(1.0f - (elapsedTime / duration), 3.0f) * magnitude * playerMultiplier;
             target.transform.Translate(-direction * smoothSpeed * Time.deltaTime);
             if (IsTouchingWall(target.transform))
             {
                 break;
             }
+            */
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
         animator.enabled = true;
         isPushedBack = false;
+        target.GetComponent<PlayerMovement>().stunned = false;
+        target.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        target.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        if (!isAttack)
+        {
+            IdlePosition(); //this tells the enemy to return at the starting point after the pushback
+            forceIdle = true;
+        }
     }
 
     private bool IsTouchingWall(Transform transform)

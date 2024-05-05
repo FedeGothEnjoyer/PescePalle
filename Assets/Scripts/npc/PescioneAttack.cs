@@ -24,7 +24,7 @@ public class PescioneAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 6 && !PlayerMovement.isInflated)
+        if(!PlayerMovement.dashing && collision.gameObject.layer == 6 && !PlayerMovement.isInflated)
         {
             enemyManager.StartPushBack(enemyManager.targetPositionEnemy, attackDuration, attackMagnitude, pushbackPlayerMultiplier, true);
         }

@@ -19,14 +19,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float inflateCooldown = 3f;
     [Header("Stop Range")]
     [SerializeField] float itemStopRange = 2f;
-    [SerializeField] float wallStopRange = 2f;
+    public float wallStopRange = 2f;
+
+    public bool stunned = false;
 
 
     private float dashTimer = 0f;
     private float InflateDurationTimer = 0f;
     private float InflateCooldownTimer;
 
-    bool dashing = false;
+    public static bool dashing = false;
     static public bool isInflated = false;
 
     private float startSpeed;
@@ -52,6 +54,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if (stunned)
+		{
+            dashing = false;
+            targetPos = transform.position;
+		}
+
         dashTimer += Time.deltaTime;
         InflateCooldownTimer += Time.deltaTime;
 

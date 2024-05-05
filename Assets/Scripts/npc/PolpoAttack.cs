@@ -40,7 +40,7 @@ public class PolpoAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 6 && !PlayerMovement.isInflated && currentTimeAttackCooldown >= Attackcooldown && !attacking)
+        if(!PlayerMovement.dashing && collision.gameObject.layer == 6 && !PlayerMovement.isInflated && currentTimeAttackCooldown >= Attackcooldown && !attacking)
         {
             StartCoroutine(BlockPlayer(collision.gameObject));
         }
