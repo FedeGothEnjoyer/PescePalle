@@ -8,6 +8,7 @@ public class PauseScript : MonoBehaviour
     public void SaveAndQuit()
     {
         Time.timeScale = 1;
+        DataSystem.SaveData();
         SceneManager.LoadScene("Menù");
     }
 

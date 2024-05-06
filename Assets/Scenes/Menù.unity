@@ -2234,7 +2234,7 @@ GameObject:
   - component: {fileID: 4465706982733761882}
   - component: {fileID: 7613323203377470586}
   m_Layer: 5
-  m_Name: BottoneUI
+  m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2350,7 +2350,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4465706982733761882}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1394372241}
+        m_TargetAssemblyTypeName: "Men\xF9Script, Assembly-CSharp"
+        m_MethodName: ContinueGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &8179101917199678730
 CanvasRenderer:
   m_ObjectHideFlags: 0
