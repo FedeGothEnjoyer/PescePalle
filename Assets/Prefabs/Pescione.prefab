@@ -192,7 +192,7 @@ MonoBehaviour:
   target: {fileID: 0}
   scoutingRange: 0.5
   changeIdlePositionRate: 3
-  chaseDistance: 5
+  chaseDistance: 7
   pushBackMagnitude: 10
   pushBackMagnitudeReduceForPlayer: 0.6
   pushBackDuration: 2
@@ -283,6 +283,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDuration: 0.5
-  attackMagnitude: 10
-  pushbackPlayerMultiplier: 4
+  attackMagnitude: 6
+  pushbackPlayerMultiplier: 3
   enemyManager: {fileID: 820626183636723317}

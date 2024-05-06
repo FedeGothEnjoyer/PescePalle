@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e66d44271f7ce4e914b8528172c082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 4128384387997735156}
   notSelected: {fileID: 9100000, guid: 0bdd1457761632f4e94b4c55990fe9e2, type: 2}
   selected: {fileID: 9100000, guid: 97de3b26cfab47d48afa4dc7885e41af, type: 2}
   onClickEvent:
@@ -1587,3 +1587,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+--- !u!1 &4128384387997735156 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3305262609285092156, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+  m_PrefabInstance: {fileID: 4128384387997735155}
+  m_PrefabAsset: {fileID: 0}

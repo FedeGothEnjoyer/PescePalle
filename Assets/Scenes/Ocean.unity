@@ -5540,7 +5540,7 @@ PrefabInstance:
     - target: {fileID: 122102496593705263, guid: 57b7842c8d3a9644f82ddc71dfac685e, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2609909328470512074}
     - target: {fileID: 122102496593705263, guid: 57b7842c8d3a9644f82ddc71dfac685e, type: 3}
       propertyPath: dialouge.sentences.Array.size
       value: 1
@@ -11140,6 +11140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+--- !u!1 &2609909328470512074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3305262609285092156, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+  m_PrefabInstance: {fileID: 2609909328470512073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3587590711536699035
 PrefabInstance:
   m_ObjectHideFlags: 0
