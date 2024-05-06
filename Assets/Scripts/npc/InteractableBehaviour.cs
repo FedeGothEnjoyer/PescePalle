@@ -8,7 +8,7 @@ public class InteractableBehaviour : MonoBehaviour
 {
 	SpriteRenderer render;
 	BoxCollider2D collision;
-	DialougeManager dialogue;
+	[SerializeField] DialougeManager dialogue;
 	Animator animator;
 	[SerializeField] GameObject target;
     [SerializeField] AnimatorController notSelected;
@@ -24,8 +24,9 @@ public class InteractableBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
 		collision = GetComponent<BoxCollider2D>();
         render = GetComponent<SpriteRenderer>();
-		dialogue = FindObjectOfType<DialougeManager>();
-    }
+		target = FindObjectOfType<PlayerMovement>().gameObject;
+		dialogue = GameObject.Find("DialougeManager").GetComponent< DialougeManager>();
+	}
 
     private void Update()
     {
@@ -46,6 +47,7 @@ public class InteractableBehaviour : MonoBehaviour
 	public bool Clicked(Vector2 mouseCheck)
 	{
 		Vector3 plr_pos = InputSystem.player.transform.position;
+		if (InputSystem.dialogueEnabled) return false;
 
         if (collision.bounds.Contains(mouseCheck))
 		{
@@ -55,8 +57,10 @@ public class InteractableBehaviour : MonoBehaviour
 				return false;
 			}
 			onClickEvent.Invoke();
-			InputSystem.dialogueEnabled = true;
+			dialogue = DialougeManager.instance;
 			dialogue.StartDialouge(dialouge);
+			InputSystem.dialogueEnabled = true;
+			
 			return true;
 		}
 		return false;

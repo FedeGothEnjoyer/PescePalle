@@ -15,18 +15,27 @@ public class DialougeManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    static public DialougeManager instance;
+
     void Start()
     {
+        if (instance != null && instance != this)
+		{
+            Destroy(gameObject);
+            return;
+		}
+        instance = this;
         sentences = new Queue<string>();
     }
 
-    public void StartDialouge(Dialouge dialouge)
+	public void StartDialouge(Dialouge dialouge)
     {
         if (EnemyManager.chasingCount != 0)
             return;
 
         InputSystem.playerInputEnabled = false;
         //Avvio l'animazione
+        animator = GameObject.Find("DialougeBox").GetComponent<Animator>();
         animator.SetBool("IsOpen", true);
         nameText.text = dialouge.name;
 
@@ -43,7 +52,7 @@ public class DialougeManager : MonoBehaviour
             EndDialouge();
             return;
         }
-
+        
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
