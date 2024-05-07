@@ -5,10 +5,13 @@ using UnityEngine;
 public class bancoRoutine : MonoBehaviour
 {
     public float speed;
+    public bool flipped;
 
     void Update()
     {
-        transform.position = transform.position + (Vector3)(Vector2.right * speed * Time.deltaTime);
+        if(flipped) transform.position = transform.position - (Vector3)(Vector2.right * speed * Time.deltaTime);
+        else transform.position = transform.position + (Vector3)(Vector2.right * speed * Time.deltaTime);
+
         if (transform.position.x > 10f) Destroy(gameObject);
     }
 }

@@ -11,10 +11,4 @@ public class FoodManager : MonoBehaviour
     {
         foodTaken = 0;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

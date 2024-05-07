@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -41,16 +42,19 @@ public class PlayerMovement : MonoBehaviour
     [Header("Transition")]
     [SerializeField] SpriteRenderer blackFade;
     [SerializeField] AnimationCurve fadeCurve;
+    [SerializeField] AnimationCurve textCurve;
     [SerializeField] float transitionDuration;
+    [SerializeField] Text newDayText;
     private int transitionStage = 0;
     private float transitionTimer;
+    [SerializeField] private bool newDayAnimation;
 
     public static Vector2 targetPos;
 
     SpriteRenderer render;
     Animator animator;
 
-    static PlayerMovement active;
+    public static PlayerMovement active;
 
     private void Awake()
     {
@@ -70,21 +74,29 @@ public class PlayerMovement : MonoBehaviour
         startMaxSpeed = maxSpeed;
         startDashSpeed = dashSpeed;
         InflateCooldownTimer = inflateCooldown;
-        GetComponentInChildren<Canvas>().worldCamera = Camera.main;
+        foreach(Canvas c in GetComponentsInChildren<Canvas>()) c.worldCamera = Camera.main;
     }
 
     void Update()
     {
         if (transitionStage != 0)
         {
-
             transitionTimer += Time.deltaTime;
+            if(newDayAnimation) transitionTimer -= Time.deltaTime * 0.75f;
             Color color = blackFade.color;
             color.a = fadeCurve.Evaluate(transitionTimer / transitionDuration);
+			if (newDayAnimation)
+			{
+                Color colorT = newDayText.color;
+                colorT.a = textCurve.Evaluate(transitionTimer / transitionDuration);
+                newDayText.color = colorT;
+            }
             if (transitionTimer / transitionDuration > 0.95f)
             {
                 transitionStage = 0;
                 color.a = 0;
+                newDayAnimation = false;
+                Start();
             }
             blackFade.color = color;
 
@@ -232,12 +244,19 @@ public class PlayerMovement : MonoBehaviour
     bool c_flipped;
     SceneAsset c_targetScene;
 
-    public void ChangingRoom(Vector2 spawnPos, bool flipped, SceneAsset targetScene)
+    public void ChangingRoom(Vector2 spawnPos, bool flipped, SceneAsset targetScene, bool versoTana)
     {
         transitionTimer = 0;
         transitionStage = 1;
         c_spawnPos = spawnPos;
         c_flipped = flipped;
         c_targetScene = targetScene;
+        if(versoTana && FoodManager.foodTaken >= 2)
+		{
+            newDayAnimation = true;
+            CurrentData.day++;
+            newDayText.text = "GIORNO " + CurrentData.day;
+            FoodManager.foodTaken = 0;
+        }
     }
 }

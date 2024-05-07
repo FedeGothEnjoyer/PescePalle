@@ -5,5 +5,5 @@ using UnityEngine;
 [System.Serializable]
 public static class CurrentData
 {
-    public static int day = 69;
+    public static int day = 1;
 }

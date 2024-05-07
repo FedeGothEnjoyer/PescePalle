@@ -7,6 +7,7 @@ public class PauseScript : MonoBehaviour
 {
     public void SaveAndQuit()
     {
+        Destroy(PlayerMovement.active.gameObject);
         Time.timeScale = 1;
         DataSystem.SaveData();
         SceneManager.LoadScene("Menù");

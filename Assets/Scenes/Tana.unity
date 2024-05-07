@@ -170,6 +170,7 @@ MonoBehaviour:
   target: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
   spawnPosition: {x: -3.5, y: -0.1}
   flipped: 0
+  versoTana: 0
 --- !u!61 &723049318
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -980,6 +981,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2033870090}
+    - target: {fileID: 1306389853, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -826
+      objectReference: {fileID: 0}
     - target: {fileID: 3305262609285092149, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
       propertyPath: m_RootOrder
       value: 0

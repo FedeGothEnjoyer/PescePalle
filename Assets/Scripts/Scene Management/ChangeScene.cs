@@ -10,6 +10,7 @@ public class ChangeScene : MonoBehaviour
     [SerializeField] SceneAsset target;
     [SerializeField] Vector2 spawnPosition;
     [SerializeField] bool flipped;
+    [SerializeField] bool versoTana;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +18,7 @@ public class ChangeScene : MonoBehaviour
         {
             EnemyManager.chasingCount = 0;
             PlayerMovement.isInflated = false;
-            FindObjectOfType<PlayerMovement>().ChangingRoom(spawnPosition, flipped, target);
+            FindObjectOfType<PlayerMovement>().ChangingRoom(spawnPosition, flipped, target, versoTana);
         }
     }
 }

@@ -9,7 +9,7 @@ public class MenùScript : MonoBehaviour
     public void StartNewGame()
     {
         SceneManager.LoadScene("Tana");
-        CurrentData.day = 0;
+        CurrentData.day = 1;
     }
 
     public void ContinueGame()
