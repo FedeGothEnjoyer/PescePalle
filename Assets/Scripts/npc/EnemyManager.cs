@@ -16,7 +16,8 @@ public class EnemyManager : MonoBehaviour
     [Header("Pushback")]
     [SerializeField] float pushBackMagnitude = 15f;
     [SerializeField] float pushBackMagnitudeReduceForPlayer = 0.5f;
-    [SerializeField] float pushBackDuration = 1f;
+    [SerializeField] float pushBackDurationPlayer = 1f;
+    [SerializeField] float pushBackDurationEnemy = 1f;
     [SerializeField] Sprite pushedBackEnemy;
 
     Seeker seeker;
@@ -114,12 +115,12 @@ public class EnemyManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6 && PlayerMovement.isInflated)
-            StartPushBack(targetPositionEnemy, pushBackDuration, pushBackMagnitude, pushBackMagnitudeReduceForPlayer, false);
+            StartPushBack(targetPositionEnemy, pushBackDurationEnemy, pushBackDurationPlayer, pushBackMagnitude, pushBackMagnitudeReduceForPlayer, false);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6 && PlayerMovement.isInflated && !isColliding)
-            StartPushBack(targetPositionEnemy, pushBackDuration, pushBackMagnitude, pushBackMagnitudeReduceForPlayer, false);
+            StartPushBack(targetPositionEnemy, pushBackDurationEnemy, pushBackDurationPlayer, pushBackMagnitude, pushBackMagnitudeReduceForPlayer, false);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -129,13 +130,13 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public void StartPushBack(Vector2 direction, float duration, float magnitude, float playerMultiplier, bool isAttack)
+    public void StartPushBack(Vector2 direction, float playerDuration, float enemyDuration, float magnitude, float playerMultiplier, bool isAttack)
     {
         isColliding = true;
-        StartCoroutine(PushBack(direction, duration, magnitude, playerMultiplier, false));
+        StartCoroutine(PushBack(direction, playerDuration, enemyDuration, magnitude, playerMultiplier, false));
     }
 
-    IEnumerator PushBack(Vector2 direction, float duration, float magnitude, float playerMultiplier, bool isAttack)
+    IEnumerator PushBack(Vector2 direction, float EnemyDuration, float PlayerDuration , float magnitude, float playerMultiplier, bool isAttack)
     {
         //FIX : TODO : fare in modo che il movimento si fermi quando la vittima incontra un muro (IsTouchingWall va ma il movimento non si ferma comunque)
 
@@ -147,36 +148,35 @@ public class EnemyManager : MonoBehaviour
         spriteRenderer.sprite = pushedBackEnemy;
 
         float elapsedTime = 0.0f;
-        while (elapsedTime < duration)
+        bool flag = false;
+        while (elapsedTime < Mathf.Max(EnemyDuration, PlayerDuration))
         {
-            float smoothSpeed;
-            //FABIO : L'idea era un Ease Out che dà l'idea della spinta, non credo sia venuto molto bene
-            //Questo script è collegato con "PescioloneAttack.cs" dacci un'occhiata
-            
-            smoothSpeed = 1.0f - Mathf.Pow(1.0f - (elapsedTime / duration), 3.0f) * magnitude;
-            transform.Translate(direction * smoothSpeed * Time.deltaTime);
-            if (IsTouchingWall(transform))
+            if (elapsedTime >= PlayerDuration && !flag)
             {
-                break;
-            }
+                flag = true;
 
-            
-            /*smoothSpeed = 1.0f - Mathf.Pow(1.0f - (elapsedTime / duration), 3.0f) * magnitude * playerMultiplier;
-            target.transform.Translate(-direction * smoothSpeed * Time.deltaTime);
-            if (IsTouchingWall(target.transform))
+                target.GetComponent<PlayerMovement>().stunned = false;
+                target.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                target.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+            if (elapsedTime < EnemyDuration)
             {
-                break;
-            }
-            */
+                float smoothSpeed;
 
+                smoothSpeed = 1.0f - Mathf.Pow(1.0f - (elapsedTime / EnemyDuration), 3.0f) * magnitude;
+                transform.Translate(direction * smoothSpeed * Time.deltaTime);
+                if (IsTouchingWall(transform))
+                {
+                    break;
+                }
+            }
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
         animator.enabled = true;
         isPushedBack = false;
-        target.GetComponent<PlayerMovement>().stunned = false;
-        target.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        target.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
         if (!isAttack)
         {
             IdlePosition(); //this tells the enemy to return at the starting point after the pushback

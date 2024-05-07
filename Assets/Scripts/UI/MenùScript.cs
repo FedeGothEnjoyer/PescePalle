@@ -15,7 +15,6 @@ public class MenùScript : MonoBehaviour
     public void ContinueGame()
     {
         DataSystem.LoadData();
-
     }
 
     public void QuitGame()

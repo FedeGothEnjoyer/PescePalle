@@ -11,6 +11,7 @@ public class InputSystem : MonoBehaviour
     static public bool dialogueEnabled;
     static public bool enemyMovementEnabled;
     static public bool worldEnabled;
+    static public bool selectedInteractableEnabled;
 
     static public DialougeManager dialogue;
 
@@ -21,6 +22,7 @@ public class InputSystem : MonoBehaviour
         enemyMovementEnabled = true;
         dialogueEnabled = false;
         worldEnabled = true;
+        selectedInteractableEnabled = true;
         player = GetComponent<PlayerMovement>();
         dialogue = GetComponentInChildren<DialougeManager>();
     }

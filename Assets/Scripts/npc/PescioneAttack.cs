@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PescioneAttack : MonoBehaviour
 {
-    [SerializeField] float attackDuration = 0.5f;
+    [SerializeField] float EnemyPushDuration = 0.5f;
+    [SerializeField] float PlayerPushDuration = 0.6f;
     [SerializeField] float attackMagnitude = 5f;
     [SerializeField] float pushbackPlayerMultiplier = 2f;
 
@@ -26,7 +27,7 @@ public class PescioneAttack : MonoBehaviour
     {
         if(!PlayerMovement.dashing && collision.gameObject.layer == 6 && !PlayerMovement.isInflated)
         {
-            enemyManager.StartPushBack(enemyManager.targetPositionEnemy, attackDuration, attackMagnitude, pushbackPlayerMultiplier, true);
+            enemyManager.StartPushBack(enemyManager.targetPositionEnemy, EnemyPushDuration, PlayerPushDuration, attackMagnitude, pushbackPlayerMultiplier, true);
         }
     }
 

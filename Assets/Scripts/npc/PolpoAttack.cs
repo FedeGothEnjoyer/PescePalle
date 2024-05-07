@@ -7,7 +7,7 @@ public class PolpoAttack : MonoBehaviour
 {
     [SerializeField] float blockDuration = 5f;
     [SerializeField] float Attackcooldown = 5f;
-    [SerializeField] Sprite polpoBlocking;
+    [SerializeField] RuntimeAnimatorController polpoBlocking;
 
     private static bool attacking = false;
     private float currentTimeAttackCooldown = 0f;
@@ -15,12 +15,14 @@ public class PolpoAttack : MonoBehaviour
     AIPath aiPath;
     Animator animator;
     SpriteRenderer spriteRenderer;
+    RuntimeAnimatorController animatorController;
 
     // Start is called before the first frame update
     void Start()
     {
-        aiPath= transform.GetComponent<AIPath>();
+        aiPath = transform.GetComponent<AIPath>();
         animator = transform.GetComponent<Animator>();
+        animatorController = animator.GetComponent<RuntimeAnimatorController>();
         spriteRenderer = transform.GetComponent<SpriteRenderer>();
     }
 
@@ -55,8 +57,7 @@ public class PolpoAttack : MonoBehaviour
 
         playerSpriteRenderer.enabled = false; //hide the player
         playerAnimator.enabled = false;
-        animator.enabled = false;
-        spriteRenderer.sprite = polpoBlocking;
+        animator.runtimeAnimatorController = polpoBlocking;
         aiPath.canMove = false;
 
         InputSystem.playerInputEnabled = false;
@@ -67,7 +68,7 @@ public class PolpoAttack : MonoBehaviour
 
         playerSpriteRenderer.enabled = true;
         playerAnimator.enabled = true;
-        animator.enabled = true;
+        animator.runtimeAnimatorController = animatorController;
         aiPath.canMove = true;
 
         attacking = false;

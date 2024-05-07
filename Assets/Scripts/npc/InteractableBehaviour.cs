@@ -36,7 +36,8 @@ public class InteractableBehaviour : MonoBehaviour
 
     private void OnMouseEnter()
 	{
-		animator.runtimeAnimatorController = selected;
+		if(InputSystem.selectedInteractableEnabled)
+			animator.runtimeAnimatorController = selected;
 	}
 
 	private void OnMouseExit()

@@ -7,6 +7,8 @@ public class PauseScript : MonoBehaviour
 {
     public void SaveAndQuit()
     {
+        InputSystem.playerInputEnabled = true;
+        InputSystem.selectedInteractableEnabled = true;
         Destroy(PlayerMovement.active.gameObject);
         Time.timeScale = 1;
         DataSystem.SaveData();
@@ -15,11 +17,15 @@ public class PauseScript : MonoBehaviour
 
     public void PauseGame()
     {
+        InputSystem.playerInputEnabled = false;
+        InputSystem.selectedInteractableEnabled = false;
         Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
+        InputSystem.playerInputEnabled = true;
+        InputSystem.selectedInteractableEnabled = true;
         Time.timeScale = 1;
     }
 }
