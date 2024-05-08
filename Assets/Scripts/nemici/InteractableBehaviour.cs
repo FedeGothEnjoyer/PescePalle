@@ -10,7 +10,7 @@ public class InteractableBehaviour : MonoBehaviour
 	BoxCollider2D collision;
 	[SerializeField] DialougeManager dialogue;
 	Animator animator;
-	[SerializeField] GameObject target;
+	GameObject target;
     [SerializeField] AnimatorController notSelected;
 	[SerializeField] AnimatorController selected;
 	[SerializeField] UnityEvent onClickEvent;
@@ -24,7 +24,7 @@ public class InteractableBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
 		collision = GetComponent<BoxCollider2D>();
         render = GetComponent<SpriteRenderer>();
-		target = FindObjectOfType<PlayerMovement>().gameObject;
+		target = PlayerMovement.active.gameObject;
 		dialogue = GameObject.Find("DialougeManager").GetComponent< DialougeManager>();
 	}
 

@@ -24,7 +24,7 @@ public class PiranhaAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = FindObjectOfType<PlayerMovement>().gameObject;
+        target = PlayerMovement.active.gameObject;
         aiPath = transform.GetComponent<AIPath>();
         animator = transform.GetComponent<Animator>();
         animatorController = animator.runtimeAnimatorController;
@@ -54,9 +54,10 @@ public class PiranhaAttack : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!PlayerMovement.dashing && collision.gameObject.layer == 6 && !PlayerMovement.isInflated && currentTimeAttackCooldown >= Attackcooldown && !PlayerMovement.isAttacked)
+        
+        if (!PlayerMovement.isInvincible && !PlayerMovement.dashing && collision.gameObject.layer == 6 && !PlayerMovement.isInflated && currentTimeAttackCooldown >= Attackcooldown && !PlayerMovement.isAttacked)
         {
             StartCoroutine(SlowPlayer(collision.gameObject));
         }
@@ -96,5 +97,6 @@ public class PiranhaAttack : MonoBehaviour
 
 
         PlayerMovement.isAttacked = false;
+        PlayerMovement.active.Attack();
     }
 }

@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e66d44271f7ce4e914b8528172c082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  dialogue: {fileID: 0}
   notSelected: {fileID: 9100000, guid: 07b0f374161bde84db3e8dc23f17d710, type: 2}
   selected: {fileID: 9100000, guid: 5515f66d666d6134fb23ac03d287c481, type: 2}
   onClickEvent:
@@ -139,7 +139,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

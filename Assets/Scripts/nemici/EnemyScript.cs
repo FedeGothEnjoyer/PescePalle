@@ -11,7 +11,7 @@ public class EnemyScript : MonoBehaviour
     private SpriteRenderer SR;
     private Animator animator;
     [SerializeField] Sprite pushedEnemy;
-    [SerializeField] GameObject target;
+    GameObject target;
     [SerializeField] float speed = 2;
     [SerializeField] float chaseDistance = 3;
     [SerializeField] float wallStopRange = 2;
@@ -40,6 +40,7 @@ public class EnemyScript : MonoBehaviour
         startPos = transform.position;
         isChasing = 0;
         normalEnemy = SR.sprite;
+        target = PlayerMovement.active.gameObject;
     }
     
     void Update()

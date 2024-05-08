@@ -160,7 +160,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.49
 --- !u!58 &5093622159877021111
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -189,7 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e66efa53f061b4582b37db68e3c6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   scoutingRange: 1
   changeIdlePositionRate: 1
   chaseDistance: 4.5
@@ -260,12 +259,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 6554660598349768955, guid: 7bd49cbeb7ddd354b8d87991a12a2b59, type: 3}
+  m_Sprite: {fileID: -8049882759247878910, guid: 4cb0d430915bcec4890aca1c9f3f2a2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -286,6 +285,6 @@ MonoBehaviour:
   NearAnimationDistance: 4
   slowDuration: 6
   speedReducer: 0.5
-  Attackcooldown: 6
+  Attackcooldown: 1.5
   piranhaBite: {fileID: 9100000, guid: 8a7e10e26f06d7e45afe1f0129a37d9b, type: 2}
-  piranhaNear: {fileID: 9100000, guid: 11d12690206eee343a0bd15d95a9f432, type: 2}
+  piranhaNear: {fileID: 9100000, guid: f9f1ff811abb31f46a39407b49690a72, type: 2}

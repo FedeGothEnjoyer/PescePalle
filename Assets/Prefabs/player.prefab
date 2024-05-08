@@ -1576,6 +1576,7 @@ MonoBehaviour:
   inflateCooldown: 3
   itemStopRange: 2
   wallStopRange: 0.5
+  invincibleTime: 0.5
   stunned: 0
   blackFade: {fileID: 602058801}
   fadeCurve:

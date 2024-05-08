@@ -41,7 +41,7 @@ public class PolpoAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!PlayerMovement.dashing && collision.gameObject.layer == 6 && !PlayerMovement.isInflated && currentTimeAttackCooldown >= Attackcooldown && !PlayerMovement.isAttacked)
+        if(!PlayerMovement.isInvincible && !PlayerMovement.dashing && collision.gameObject.layer == 6 && !PlayerMovement.isInflated && currentTimeAttackCooldown >= Attackcooldown && !PlayerMovement.isAttacked)
         {
             StartCoroutine(BlockPlayer(collision.gameObject));
         }
@@ -71,5 +71,6 @@ public class PolpoAttack : MonoBehaviour
         aiPath.canMove = true;
 
         PlayerMovement.isAttacked = false;
+        PlayerMovement.active.Attack();
     }
 }

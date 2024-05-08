@@ -21,12 +21,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float inflateCooldown = 3f;
     [Header("Stop Range")]
     [SerializeField] float itemStopRange = 2f;
-
-
     public float wallStopRange = 2f;
+    [Header("Invincibility")]
+    [SerializeField] float invincibleTime = 1f;
+
+
+    
 
     public bool stunned = false;
     public static bool isAttacked;
+    public static bool isInvincible;
+    private float invincibleTimer;
 
     private float dashTimer = 0f;
     private float InflateDurationTimer = 0f;
@@ -67,6 +72,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        isInvincible = false;
+        invincibleTimer = 0f;
         isAttacked = false;
         targetPos = transform.position;
         render = GetComponent<SpriteRenderer>();
@@ -80,6 +87,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+		if (isInvincible)
+		{
+            invincibleTimer += Time.deltaTime;
+            if(invincibleTimer >= invincibleTime)
+			{
+                isInvincible = false;
+			}
+		}
         if (transitionStage != 0)
         {
             transitionTimer += Time.deltaTime;
@@ -266,4 +281,10 @@ public class PlayerMovement : MonoBehaviour
             FoodManager.foodTaken = 0;
         }
     }
+
+    public void Attack()
+	{
+        isInvincible = true;
+        invincibleTimer = 0f;
+	}
 }

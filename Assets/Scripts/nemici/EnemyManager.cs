@@ -9,7 +9,7 @@ using TMPro;
 public class EnemyManager : MonoBehaviour
 {
     [Header("Chasing")]
-    [SerializeField] GameObject target;
+    GameObject target;
     [SerializeField] float scoutingRange = 1f;
     [SerializeField] float changeIdlePositionRate = 2f;
     [SerializeField] float chaseDistance = 6f;
@@ -41,6 +41,7 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        target = PlayerMovement.active.gameObject;
         aiPath = transform.GetComponent<AIPath>();
         spriteRenderer = transform.GetComponent<SpriteRenderer>();
         animator = transform.GetComponent<Animator>();

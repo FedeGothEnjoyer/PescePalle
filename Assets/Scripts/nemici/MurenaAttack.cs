@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MurenaAttack : MonoBehaviour
 {
-    [SerializeField] GameObject target;
+    GameObject target;
     [SerializeField] float blockDuration = 5f;
     [SerializeField] float Attackcooldown = 5f;
     [SerializeField] float electricDistance = 4f;
@@ -20,6 +20,7 @@ public class MurenaAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        target = PlayerMovement.active.gameObject;
         animator = transform.GetComponent<Animator>();
         animatorControllerMurena = animator.runtimeAnimatorController;
     }
@@ -37,9 +38,13 @@ public class MurenaAttack : MonoBehaviour
             EnemyManager.forceIdleEveryone = false;
         }
 
-        if(Vector2.Distance(transform.position, target.transform.position) <= electricDistance && animator.runtimeAnimatorController != electicMurena)
+        if(Vector2.Distance(transform.position, target.transform.position) <= electricDistance)
         {
-            animator.runtimeAnimatorController = electicMurena;
+            if(animator.runtimeAnimatorController != electicMurena)
+			{
+                animator.runtimeAnimatorController = electicMurena;
+                Debug.Log("switched");
+            }
         }
         else if(animator.runtimeAnimatorController != animatorControllerMurena)
         {
@@ -49,7 +54,7 @@ public class MurenaAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!PlayerMovement.dashing && collision.gameObject.layer == 6 && !PlayerMovement.isInflated && currentTimeAttackCooldown >= Attackcooldown && !PlayerMovement.isAttacked)
+        if (!PlayerMovement.isInvincible && !PlayerMovement.dashing && collision.gameObject.layer == 6 && !PlayerMovement.isInflated && currentTimeAttackCooldown >= Attackcooldown && !PlayerMovement.isAttacked)
         {
             StartCoroutine(BlockPlayer(collision.gameObject));
         }
@@ -73,5 +78,6 @@ public class MurenaAttack : MonoBehaviour
         playerAnimator.runtimeAnimatorController = playerAnimatorcontroller;
 
         PlayerMovement.isAttacked = false;
+        PlayerMovement.active.Attack();
     }
 }

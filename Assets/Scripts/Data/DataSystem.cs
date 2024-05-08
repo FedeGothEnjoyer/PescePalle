@@ -9,11 +9,11 @@ public static class DataSystem
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/pescepalla.data"; //persistentDataPath: directory nel SO che non cambia
-        FileStream stream = new FileStream(path, FileMode.Create);
-
-        formatter.Serialize(stream, CurrentData.day);
-
-        stream.Close();
+        using (FileStream stream = new FileStream(path, FileMode.Create))
+		{
+            formatter.Serialize(stream, CurrentData.day);
+            stream.Close();
+        }
     }
 
     public static void LoadData()
@@ -23,9 +23,11 @@ public static class DataSystem
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            CurrentData.day = (int)formatter.Deserialize(stream);
+            using (FileStream stream = new FileStream(path, FileMode.Open))
+			{
+                CurrentData.day = (int)formatter.Deserialize(stream);
+                stream.Close();
+            }
         }
         else
         {
