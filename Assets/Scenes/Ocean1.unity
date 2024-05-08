@@ -2361,6 +2361,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5093622159877021106, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5093622159877021106, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8049882759247878910, guid: 4cb0d430915bcec4890aca1c9f3f2a2c, type: 3}
+    - target: {fileID: 5093622159877021106, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5093622159877021107, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2379,7 +2391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5093622159877021107, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5093622159877021107, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2387,7 +2399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5093622159877021107, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5093622159877021107, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2399,7 +2411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5093622159877021107, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5093622159877021107, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2409,6 +2421,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1338939639}
+    - target: {fileID: 5093622159877021109, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5742e005572038643bf9cff4326a6783, type: 2}
     - target: {fileID: 5093622159877021118, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
       propertyPath: target
       value: 
@@ -2417,5 +2433,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piranha
       objectReference: {fileID: 0}
+    - target: {fileID: 8341562195070083066, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
+      propertyPath: piranhaBite
+      value: 
+      objectReference: {fileID: 9100000, guid: 8a7e10e26f06d7e45afe1f0129a37d9b, type: 2}
+    - target: {fileID: 8341562195070083066, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
+      propertyPath: piranhaNear
+      value: 
+      objectReference: {fileID: 9100000, guid: f9f1ff811abb31f46a39407b49690a72, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
