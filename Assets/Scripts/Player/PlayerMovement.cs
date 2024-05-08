@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Speed")]
-    [SerializeField] float speed = 5f;
-    [SerializeField] float maxSpeed = 5f;
+    [SerializeField] public float speed = 5f;
+    [SerializeField] public float maxSpeed = 5f;
     [SerializeField] float infl_speed_reduce = 0.4f;
     [Header("Dash")]
     [SerializeField] float dashSpeed = 8f;
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public float wallStopRange = 2f;
 
     public bool stunned = false;
-
+    public static bool isAttacked;
 
     private float dashTimer = 0f;
     private float InflateDurationTimer = 0f;
@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        isAttacked = false;
         targetPos = transform.position;
         render = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -187,7 +188,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dash(Vector2 target)
     {
-        if (dashTimer >= dashFrequency)
+        if (dashTimer >= dashFrequency && InputSystem.abilitiesEnabled)
         {
             dashTimer = 0;
             var vec = target - (Vector2)transform.position;
@@ -215,27 +216,33 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartInflate()
     {
-        isInflated = true;
+        if (InputSystem.abilitiesEnabled)
+        {
+            isInflated = true;
 
 
-        InflateCooldownTimer = 0;
-        InflateDurationTimer = 0;
-        animator.Play("plrAttackOpn");
-        maxSpeed *= infl_speed_reduce;
-        speed *= infl_speed_reduce;
-        dashSpeed = 0;
+            InflateCooldownTimer = 0;
+            InflateDurationTimer = 0;
+            animator.Play("plrAttackOpn");
+            maxSpeed *= infl_speed_reduce;
+            speed *= infl_speed_reduce;
+            dashSpeed = 0;
+        }
     }
 
     private void StopInflate()
     {
-        isInflated = false;
+        if (InputSystem.abilitiesEnabled)
+        {
+            isInflated = false;
 
-        InflateCooldownTimer = 0;
-        InflateDurationTimer = 0;
-        animator.Play("plrAttackExit");
-        maxSpeed = startMaxSpeed;
-        speed = startSpeed;
-        dashSpeed = startDashSpeed;
+            InflateCooldownTimer = 0;
+            InflateDurationTimer = 0;
+            animator.Play("plrAttackExit");
+            maxSpeed = startMaxSpeed;
+            speed = startSpeed;
+            dashSpeed = startDashSpeed;
+        }
     }
 
 

@@ -9,7 +9,6 @@ public class PolpoAttack : MonoBehaviour
     [SerializeField] float Attackcooldown = 5f;
     [SerializeField] RuntimeAnimatorController polpoBlocking;
 
-    private static bool attacking = false;
     private float currentTimeAttackCooldown = 0f;
 
     AIPath aiPath;
@@ -22,7 +21,7 @@ public class PolpoAttack : MonoBehaviour
     {
         aiPath = transform.GetComponent<AIPath>();
         animator = transform.GetComponent<Animator>();
-        animatorController = animator.GetComponent<RuntimeAnimatorController>();
+        animatorController = animator.runtimeAnimatorController;
         spriteRenderer = transform.GetComponent<SpriteRenderer>();
     }
 
@@ -42,7 +41,7 @@ public class PolpoAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!PlayerMovement.dashing && collision.gameObject.layer == 6 && !PlayerMovement.isInflated && currentTimeAttackCooldown >= Attackcooldown && !attacking)
+        if(!PlayerMovement.dashing && collision.gameObject.layer == 6 && !PlayerMovement.isInflated && currentTimeAttackCooldown >= Attackcooldown && !PlayerMovement.isAttacked)
         {
             StartCoroutine(BlockPlayer(collision.gameObject));
         }
@@ -50,7 +49,7 @@ public class PolpoAttack : MonoBehaviour
     
     IEnumerator BlockPlayer(GameObject player)
     {
-        attacking = true;
+        PlayerMovement.isAttacked = true;
 
         SpriteRenderer playerSpriteRenderer = player.transform.GetComponent<SpriteRenderer>();
         Animator playerAnimator = player.transform.GetComponent<Animator>();
@@ -71,6 +70,6 @@ public class PolpoAttack : MonoBehaviour
         animator.runtimeAnimatorController = animatorController;
         aiPath.canMove = true;
 
-        attacking = false;
+        PlayerMovement.isAttacked = false;
     }
 }

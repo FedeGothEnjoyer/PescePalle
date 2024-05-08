@@ -63,7 +63,7 @@ public class EnemyManager : MonoBehaviour
             float distanceToPlayer = Vector2.Distance(transform.position, target.transform.position);
 
             //chase player
-            if (!forceIdle && distanceToPlayer <= chaseDistance && !forceIdleEveryone)
+            if (!forceIdle && distanceToPlayer <= chaseDistance && (!forceIdleEveryone || gameObject.tag == "piranha"))
             {
                 spriteRenderer.flipX = target.transform.position.x > transform.position.x;
 
