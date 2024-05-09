@@ -15,6 +15,7 @@ public class PolpoAttack : MonoBehaviour
     Animator animator;
     SpriteRenderer spriteRenderer;
     RuntimeAnimatorController animatorController;
+    MessageManager messageManager;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class PolpoAttack : MonoBehaviour
         animator = transform.GetComponent<Animator>();
         animatorController = animator.runtimeAnimatorController;
         spriteRenderer = transform.GetComponent<SpriteRenderer>();
+        messageManager = MessageManager.instance;
     }
 
     // Update is called once per frame
