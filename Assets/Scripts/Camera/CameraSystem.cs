@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class CameraSystem : MonoBehaviour
 {
-    public GameObject target;
-    public float followSpeed = 5f;
+    GameObject target;
+    [SerializeField] float followSpeed = 5f;
 
-    private void Update()
+	private void Start()
+	{
+        target = PlayerMovement.active.gameObject;
+	}
+
+	private void Update()
     {
         if (target != null)
         {

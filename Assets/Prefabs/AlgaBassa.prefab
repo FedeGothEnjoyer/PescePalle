@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4110141930051001784}
   - component: {fileID: 4110141930051001787}
+  - component: {fileID: 5021556085149769263}
   - component: {fileID: 4110141930051001786}
   m_Layer: 0
   m_Name: AlgaBassa
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -4970846039216337056, guid: b43a57dff0366ac4cbb4d373cdaea572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -83,6 +84,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5021556085149769263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4110141930051001765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc962bed93de840428af3bb3c1ab9c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &4110141930051001786
 Animator:
   serializedVersion: 5
