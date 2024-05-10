@@ -10,7 +10,7 @@ public class MessageManager : MonoBehaviour
     public Text messageText;
     static public MessageManager instance;
 
-    void Start()
+    void Awake()
     {
         if (instance != null && instance != this)
         {
@@ -18,12 +18,6 @@ public class MessageManager : MonoBehaviour
             return;
         }
         instance = this;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void StartMessage(string message, float duration)
@@ -51,7 +45,6 @@ public class MessageManager : MonoBehaviour
         {
             messageText.color = Color.Lerp(messageText.color, newColor, fadeSpeed * Time.deltaTime);
             yield return null;
-            Debug.Log(messageText.enabled);
         }
 
         yield return new WaitForSeconds(duration);
@@ -64,6 +57,5 @@ public class MessageManager : MonoBehaviour
         }
 
         messageText.enabled = false;
-        Debug.Log(messageText.enabled);
     }
 }

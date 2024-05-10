@@ -51,6 +51,7 @@ public class PolpoAttack : MonoBehaviour
     
     IEnumerator BlockPlayer(GameObject player)
     {
+        messageManager.StartMessage("hah COGLIONE blub blub blub", 2);
         PlayerMovement.isAttacked = true;
 
         SpriteRenderer playerSpriteRenderer = player.transform.GetComponent<SpriteRenderer>();
