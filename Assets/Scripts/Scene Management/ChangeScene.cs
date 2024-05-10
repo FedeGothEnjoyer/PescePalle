@@ -11,6 +11,7 @@ public class ChangeScene : MonoBehaviour
     [SerializeField] Vector2 spawnPosition;
     [SerializeField] bool flipped;
     [SerializeField] bool versoTana;
+    [SerializeField] SceneAsset newDayTarget;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,7 +19,8 @@ public class ChangeScene : MonoBehaviour
         {
             EnemyManager.chasingCount = 0;
             PlayerMovement.isInflated = false;
-            FindObjectOfType<PlayerMovement>().ChangingRoom(spawnPosition, flipped, target, versoTana);
+            PlayerMovement.active.Attack(); //trigger invincibility
+            FindObjectOfType<PlayerMovement>().ChangingRoom(spawnPosition, flipped, target, versoTana, newDayTarget);
         }
     }
 }

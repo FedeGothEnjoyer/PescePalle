@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenùScript : MonoBehaviour
 {
+    [SerializeField] List<SceneAsset> taneGiorni;
+
     public void StartNewGame()
     {
         SceneManager.LoadScene("Tana");
@@ -15,6 +18,7 @@ public class MenùScript : MonoBehaviour
     public void ContinueGame()
     {
         DataSystem.LoadData();
+        SceneManager.LoadScene(taneGiorni[CurrentData.day-1].name);
     }
 
     public void QuitGame()

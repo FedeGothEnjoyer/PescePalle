@@ -266,7 +266,7 @@ public class PlayerMovement : MonoBehaviour
     bool c_flipped;
     SceneAsset c_targetScene;
 
-    public void ChangingRoom(Vector2 spawnPos, bool flipped, SceneAsset targetScene, bool versoTana)
+    public void ChangingRoom(Vector2 spawnPos, bool flipped, SceneAsset targetScene, bool versoTana, SceneAsset newDayTarget)
     {
         transitionTimer = 0;
         transitionStage = 1;
@@ -279,6 +279,7 @@ public class PlayerMovement : MonoBehaviour
             CurrentData.day++;
             newDayText.text = "GIORNO " + CurrentData.day;
             FoodManager.foodTaken = 0;
+            c_targetScene = newDayTarget;
         }
     }
 

@@ -9,17 +9,23 @@ EditorBuildSettings:
     path: "Assets/Scenes/Men\xF9.unity"
     guid: 8440c698cfc0a5848a73405c05a807c3
   - enabled: 1
-    path: Assets/Scenes/Tana.unity
+    path: Assets/Scenes/Giorno 1/Tana.unity
     guid: bd7d1b5c0e6a2ed4f989cf1d1420b215
   - enabled: 1
-    path: Assets/Scenes/Ocean.unity
+    path: Assets/Scenes/Giorno 1/Ocean0.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Giorno 2/Tana 2.unity
+    guid: 1925d5e592b85e846baccca5a776ebde
+  - enabled: 1
     path: Assets/Scenes/Finale.unity
     guid: 8c105bb610a80fc499c2856bbb0299a8
+  - enabled: 1
+    path: Assets/Scenes/Giorno 2/Ocean0 2.unity
+    guid: 24b7bfa3b1ca1534b9dbba6c88a897da
   - enabled: 1
     path: Assets/Scenes/Ocean 4.unity
     guid: 86103fc0fba755a41bd199984d42c84f
@@ -36,7 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Ocean2 Phase3.unity
     guid: 3aadad5925a811f41b5b7dc41abcb50c
   - enabled: 1
-    path: Assets/Scenes/Ocean2.unity
+    path: Assets/Scenes/Giorno 2/Ocean2 2.unity
     guid: 29e3a11757b1eb1489a6a126e50dc4bc
   - enabled: 1
     path: Assets/Scenes/Ocean3.1 Phase 2.unity
