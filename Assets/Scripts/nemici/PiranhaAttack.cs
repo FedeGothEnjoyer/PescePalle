@@ -77,14 +77,16 @@ public class PiranhaAttack : MonoBehaviour
 
         aiPath.canMove = false;
         //Rallentamento
-        InputSystem.abilitiesEnabled = false;
+        InputSystem.inflateEnabled = false;
+        InputSystem.dashEnabled = false;
         player.GetComponent<PlayerMovement>().speed *= speedReducer;
         player.GetComponent<PlayerMovement>().maxSpeed *= speedReducer;
         //Attesa
         yield return new WaitForSeconds(slowDuration);
         currentTimeAttackCooldown = 0f;
 
-        InputSystem.abilitiesEnabled = true;
+        InputSystem.inflateEnabled = true;
+        InputSystem.dashEnabled = true;
         player.GetComponent<PlayerMovement>().speed /= speedReducer;
         player.GetComponent<PlayerMovement>().maxSpeed /= speedReducer;
 

@@ -10,6 +10,13 @@ public class MessageManager : MonoBehaviour
     public Text messageText;
     static public MessageManager instance;
 
+    Color newColor;
+
+    private void Start()
+    {
+        newColor = messageText.color;
+    }
+
     void Awake()
     {
         if (instance != null && instance != this)
@@ -19,7 +26,7 @@ public class MessageManager : MonoBehaviour
         }
         instance = this;
     }
-
+    //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     public void StartMessage(string message, float duration)
     {
         if (message == null)
@@ -29,16 +36,25 @@ public class MessageManager : MonoBehaviour
         }
 
         StopAllCoroutines();
-        StartCoroutine(PopupMessage(message, duration));
+        StartCoroutine(MessageDuration(message, duration));
     }
 
-    IEnumerator PopupMessage(string message, float duration)
+    public void ActiveMessage(string message)
+    {
+        StopAllCoroutines();
+        StartCoroutine(ShowMessage(message));
+    }
+
+    public void DeActiveMessage(string message)
+    {
+        StopAllCoroutines();
+        StartCoroutine(HideMessage());
+    }
+
+    IEnumerator MessageDuration(string message, float duration)
     {
         messageText.text = message;
-
         messageText.enabled = true;
-
-        Color newColor = messageText.color;
 
         newColor.a = 1;
         while (messageText.color.a < 0.95f)
@@ -49,6 +65,31 @@ public class MessageManager : MonoBehaviour
 
         yield return new WaitForSeconds(duration);
 
+        newColor.a = 0;
+        while (messageText.color.a > 0)
+        {
+            messageText.color = Color.Lerp(messageText.color, newColor, fadeSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        messageText.enabled = false;
+    }
+
+    IEnumerator ShowMessage(string message)
+    {
+        messageText.text = message;
+        messageText.enabled = true;
+
+        newColor.a = 1;
+        while (messageText.color.a < 0.95f)
+        {
+            messageText.color = Color.Lerp(messageText.color, newColor, fadeSpeed * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    IEnumerator HideMessage()
+    {
         newColor.a = 0;
         while (messageText.color.a > 0)
         {

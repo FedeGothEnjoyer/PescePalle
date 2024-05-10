@@ -203,7 +203,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dash(Vector2 target)
     {
-        if (dashTimer >= dashFrequency && InputSystem.abilitiesEnabled)
+        if (dashTimer >= dashFrequency && InputSystem.dashEnabled)
         {
             dashTimer = 0;
             var vec = target - (Vector2)transform.position;
@@ -231,7 +231,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartInflate()
     {
-        if (InputSystem.abilitiesEnabled)
+        if (InputSystem.inflateEnabled)
         {
             isInflated = true;
 
@@ -247,7 +247,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopInflate()
     {
-        if (InputSystem.abilitiesEnabled)
+        if (InputSystem.inflateEnabled)
         {
             isInflated = false;
 

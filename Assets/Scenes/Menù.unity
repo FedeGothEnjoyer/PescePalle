@@ -403,8 +403,20 @@ PrefabInstance:
       value: bancoSpawner (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4326750117911657453, guid: 09d7491eeab00fa49afee29326c855c0, type: 3}
+      propertyPath: range
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326750117911657453, guid: 09d7491eeab00fa49afee29326c855c0, type: 3}
       propertyPath: flipped
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326750117911657453, guid: 09d7491eeab00fa49afee29326c855c0, type: 3}
+      propertyPath: yRange.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326750117911657453, guid: 09d7491eeab00fa49afee29326c855c0, type: 3}
+      propertyPath: yRange.y
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09d7491eeab00fa49afee29326c855c0, type: 3}
@@ -1301,7 +1313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1067902036
@@ -1855,6 +1867,18 @@ PrefabInstance:
     - target: {fileID: 4326750117911657452, guid: 09d7491eeab00fa49afee29326c855c0, type: 3}
       propertyPath: m_Name
       value: bancoSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326750117911657453, guid: 09d7491eeab00fa49afee29326c855c0, type: 3}
+      propertyPath: range
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326750117911657453, guid: 09d7491eeab00fa49afee29326c855c0, type: 3}
+      propertyPath: yRange.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326750117911657453, guid: 09d7491eeab00fa49afee29326c855c0, type: 3}
+      propertyPath: yRange.y
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09d7491eeab00fa49afee29326c855c0, type: 3}
