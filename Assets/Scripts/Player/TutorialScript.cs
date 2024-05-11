@@ -31,7 +31,7 @@ public class TutorialScript : MonoBehaviour
         yield return new WaitForSeconds(1);
         messageManager.ActiveMessage("Ottimo! Ora segui il percorso e fermati sul punto rosso.");
 
-        while()
+        //while()
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

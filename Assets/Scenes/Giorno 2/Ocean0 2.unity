@@ -918,7 +918,7 @@ PrefabInstance:
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 102900000, guid: 29e3a11757b1eb1489a6a126e50dc4bc, type: 3}
+      objectReference: {fileID: 102900000, guid: da9ccb3603b56a447bc5e62ed21c4389, type: 3}
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: spawnPosition.x
       value: -13
@@ -1038,11 +1038,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c32e57b53fd304c8c1834453fa9126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 102900000, guid: bd7d1b5c0e6a2ed4f989cf1d1420b215, type: 3}
+  target: {fileID: 102900000, guid: b218dabc2d0eae34d98528eca5f360fd, type: 3}
   spawnPosition: {x: 3.5, y: 0}
   flipped: 1
   versoTana: 1
-  newDayTarget: {fileID: 102900000, guid: 1925d5e592b85e846baccca5a776ebde, type: 3}
+  newDayTarget: {fileID: 102900000, guid: b218dabc2d0eae34d98528eca5f360fd, type: 3}
 --- !u!61 &556176085
 BoxCollider2D:
   m_ObjectHideFlags: 0

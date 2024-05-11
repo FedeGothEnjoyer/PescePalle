@@ -10,6 +10,7 @@ public class CameraSystem : MonoBehaviour
 	private void Start()
 	{
         target = PlayerMovement.active.gameObject;
+        transform.position = target.transform.position;
 	}
 
 	private void Update()
