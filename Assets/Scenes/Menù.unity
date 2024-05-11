@@ -1938,6 +1938,7 @@ MonoBehaviour:
   taneGiorni:
   - {fileID: 102900000, guid: bd7d1b5c0e6a2ed4f989cf1d1420b215, type: 3}
   - {fileID: 102900000, guid: 1925d5e592b85e846baccca5a776ebde, type: 3}
+  - {fileID: 102900000, guid: b218dabc2d0eae34d98528eca5f360fd, type: 3}
 --- !u!1 &1474465130
 GameObject:
   m_ObjectHideFlags: 0

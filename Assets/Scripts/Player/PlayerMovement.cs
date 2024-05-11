@@ -118,6 +118,10 @@ public class PlayerMovement : MonoBehaviour
 
             if (transitionTimer / transitionDuration > 0.5f && transitionStage == 1)
             {
+                EnemyManager.chasingCount = 0;
+                PlayerMovement.isAttacked = false;
+                PlayerMovement.isInflated = false;
+                PlayerMovement.active.Attack(); //trigger invincibility
                 transitionStage = 2;
                 render.flipX = c_flipped;
                 SceneManager.LoadScene(c_targetScene.name);

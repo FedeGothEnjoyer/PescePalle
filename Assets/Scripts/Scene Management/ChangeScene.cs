@@ -17,9 +17,6 @@ public class ChangeScene : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
-            EnemyManager.chasingCount = 0;
-            PlayerMovement.isInflated = false;
-            PlayerMovement.active.Attack(); //trigger invincibility
             FindObjectOfType<PlayerMovement>().ChangingRoom(spawnPosition, flipped, target, versoTana, newDayTarget);
         }
     }

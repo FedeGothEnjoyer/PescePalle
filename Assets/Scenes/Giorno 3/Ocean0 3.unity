@@ -918,7 +918,7 @@ PrefabInstance:
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 102900000, guid: 29e3a11757b1eb1489a6a126e50dc4bc, type: 3}
+      objectReference: {fileID: 102900000, guid: da9ccb3603b56a447bc5e62ed21c4389, type: 3}
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: spawnPosition.x
       value: -13
@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c32e57b53fd304c8c1834453fa9126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 102900000, guid: 1925d5e592b85e846baccca5a776ebde, type: 3}
+  target: {fileID: 102900000, guid: b218dabc2d0eae34d98528eca5f360fd, type: 3}
   spawnPosition: {x: 3.5, y: 0}
   flipped: 1
   versoTana: 1
@@ -1148,12 +1148,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 122102496593705263, guid: 57b7842c8d3a9644f82ddc71dfac685e, type: 3}
       propertyPath: dialouge.sentences.Array.data[0]
-      value: Oggi non ho visto nemmeno un gamberetto...
+      value: L'altra notte ci sono state delle correnti molto forti,  stai all'erta!
       objectReference: {fileID: 0}
     - target: {fileID: 122102496593705263, guid: 57b7842c8d3a9644f82ddc71dfac685e, type: 3}
       propertyPath: dialouge.sentences.Array.data[1]
-      value: Puoi provare a cercare nella stanza qui a destra, ma stai attento! Non
-        tutti i pesci sono amichevoli.
+      value: L'acqua stava trascinando molte assi di legno, mi chiedo da dove venissero...
       objectReference: {fileID: 0}
     - target: {fileID: 122102496593705263, guid: 57b7842c8d3a9644f82ddc71dfac685e, type: 3}
       propertyPath: dialouge.sentences.Array.data[2]

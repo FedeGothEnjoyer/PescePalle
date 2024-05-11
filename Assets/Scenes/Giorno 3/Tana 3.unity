@@ -729,8 +729,8 @@ MonoBehaviour:
   dialouge:
     name: Tartaruga Anziana
     sentences:
-    - Terzi giorno lolololol
-    - Prova a bloccarti il naso e deglutire
+    - 'Bentornato! '
+    - TODO ////////////
 --- !u!61 &1897253908
 BoxCollider2D:
   m_ObjectHideFlags: 0

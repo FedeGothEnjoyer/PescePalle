@@ -82,7 +82,7 @@ public class EnemyManager : MonoBehaviour
                 if (isChasing)
                 {
                     isChasing = false;
-                    chasingCount -= 1;
+                    chasingCount = Mathf.Max(0, chasingCount-1);
                 }
 
                 //change idle position
