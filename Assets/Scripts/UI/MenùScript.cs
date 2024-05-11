@@ -15,6 +15,12 @@ public class MenùScript : MonoBehaviour
         CurrentData.day = 1;
     }
 
+    public void StartTutorial()
+    {
+        SceneManager.LoadScene("Tuto");
+        CurrentData.day = 1;
+    }
+
     public void ContinueGame()
     {
         DataSystem.LoadData();

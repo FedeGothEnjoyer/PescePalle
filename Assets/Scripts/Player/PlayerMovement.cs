@@ -207,7 +207,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dash(Vector2 target)
     {
-        if (dashTimer >= dashFrequency && InputSystem.dashEnabled)
+        if (dashTimer >= dashFrequency)
         {
             dashTimer = 0;
             var vec = target - (Vector2)transform.position;
@@ -235,33 +235,27 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartInflate()
     {
-        if (InputSystem.inflateEnabled)
-        {
-            isInflated = true;
+        isInflated = true;
 
 
-            InflateCooldownTimer = 0;
-            InflateDurationTimer = 0;
-            animator.Play("plrAttackOpn");
-            maxSpeed *= infl_speed_reduce;
-            speed *= infl_speed_reduce;
-            dashSpeed = 0;
-        }
+        InflateCooldownTimer = 0;
+        InflateDurationTimer = 0;
+        animator.Play("plrAttackOpn");
+        maxSpeed *= infl_speed_reduce;
+        speed *= infl_speed_reduce;
+        dashSpeed = 0;
     }
 
     private void StopInflate()
     {
-        if (InputSystem.inflateEnabled)
-        {
-            isInflated = false;
+        isInflated = false;
 
-            InflateCooldownTimer = 0;
-            InflateDurationTimer = 0;
-            animator.Play("plrAttackExit");
-            maxSpeed = startMaxSpeed;
-            speed = startSpeed;
-            dashSpeed = startDashSpeed;
-        }
+        InflateCooldownTimer = 0;
+        InflateDurationTimer = 0;
+        animator.Play("plrAttackExit");
+        maxSpeed = startMaxSpeed;
+        speed = startSpeed;
+        dashSpeed = startDashSpeed;
     }
 
 

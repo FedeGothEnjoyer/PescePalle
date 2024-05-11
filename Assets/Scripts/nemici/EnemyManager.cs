@@ -30,7 +30,7 @@ public class EnemyManager : MonoBehaviour
 
     private bool isChasing = false; //determines if the enemy is chasing the player, used for chasingCount
     private bool isColliding = false; //determines if enemy is colliding with the player
-    private bool isPushedBack = false; //used to stop searching for idle position
+    public bool isPushedBack = false; //used to stop searching for idle position
     private bool forceIdle = false; //forces idle when player is inflated
     public static bool forceIdleEveryone = false; //forces idle to everyone, used after some attacks
     private float currentTimeChangeIdlePosition = 0f;

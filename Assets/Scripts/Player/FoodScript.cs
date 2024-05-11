@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class FoodScript : MonoBehaviour
 {
-    [SerializeField] GameObject target;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6)

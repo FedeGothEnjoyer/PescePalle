@@ -12,6 +12,7 @@ public class InputSystem : MonoBehaviour
     static public bool enemyMovementEnabled;
     static public bool worldEnabled;
     static public bool selectedInteractableEnabled;
+    static public bool playerMovementEnabled; //tutorial
     static public bool dashEnabled;
     static public bool inflateEnabled;
 
@@ -21,6 +22,8 @@ public class InputSystem : MonoBehaviour
     public void Start()
     {
         playerInputEnabled = true;
+
+        playerMovementEnabled = true;
         enemyMovementEnabled = true;
         dialogueEnabled = false;
         worldEnabled = true;
@@ -54,7 +57,7 @@ public class InputSystem : MonoBehaviour
                 }
             }
 
-            if (!hitUI && playerInputEnabled)
+            if (!hitUI && playerInputEnabled && playerMovementEnabled)
 			{
                 bool objectClicked = false;
                 foreach (InteractableBehaviour b in FindObjectsByType<InteractableBehaviour>(FindObjectsSortMode.None))
@@ -80,7 +83,7 @@ public class InputSystem : MonoBehaviour
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-			if (playerInputEnabled)
+			if (playerInputEnabled && dashEnabled)
 			{
                 player.Dash(mousePos);
             }
@@ -88,7 +91,7 @@ public class InputSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (playerInputEnabled)
+            if (playerInputEnabled && inflateEnabled)
             {
                 player.Inflate();
             }
