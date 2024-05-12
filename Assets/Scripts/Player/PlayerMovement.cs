@@ -26,8 +26,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Invincibility")]
     [SerializeField] float invincibleTime = 1f;
 
-
-    
+    public static List<Vector2> foodPositions;
 
     public bool stunned = false;
     public static bool isAttacked;
@@ -55,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
     private float transitionTimer;
     [SerializeField] private bool newDayAnimation;
     private bool firstLoad = true;
+    private bool destructionPass = false;
 
     public static Vector2 targetPos;
 
@@ -68,10 +68,14 @@ public class PlayerMovement : MonoBehaviour
         //singleton check
         DontDestroyOnLoad(this);
         if (active != null && active != this) DestroyImmediate(gameObject);
-        else active = this;
-        transitionStage = 2;
-        transitionTimer = 0.5f*transitionDuration;
-        firstLoad = true;
+        else
+        {
+            active = this;
+            transitionStage = 2;
+            transitionTimer = 0.5f * transitionDuration;
+            firstLoad = true;
+            foodPositions = new List<Vector2>();
+        }
     }
 
 
@@ -88,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
         startDashSpeed = dashSpeed;
         InflateCooldownTimer = inflateCooldown;
         foreach(Canvas c in GetComponentsInChildren<Canvas>()) c.worldCamera = Camera.main;
+        
     }
 
     void Update()
@@ -102,6 +107,21 @@ public class PlayerMovement : MonoBehaviour
 		}
         if (transitionStage != 0)
         {
+			if (destructionPass)
+			{
+                foreach (FoodScript food in FindObjectsByType<FoodScript>(FindObjectsSortMode.InstanceID))
+                {
+                    foreach (Vector2 v in foodPositions)
+                    {
+                        if ((int)v.x == (int)food.transform.position.x && (int)v.y == (int)food.transform.position.y) DestroyImmediate(food.gameObject);
+                    }
+                }
+                foreach(ParticleSystem p in GetComponentsInChildren<ParticleSystem>())
+				{
+                    p.Clear();
+				}
+                destructionPass = false;
+            }
             transitionTimer += Time.deltaTime;
             if(newDayAnimation || firstLoad) transitionTimer -= Time.deltaTime * 0.75f;
             Color color = blackFade.color;
@@ -125,15 +145,16 @@ public class PlayerMovement : MonoBehaviour
             if (transitionTimer / transitionDuration > 0.5f && transitionStage == 1)
             {
                 EnemyManager.chasingCount = 0;
-                PlayerMovement.isAttacked = false;
-                PlayerMovement.isInflated = false;
-                PlayerMovement.active.Attack(); //trigger invincibility
+                isAttacked = false;
+                isInflated = false;
+                active.Attack(); //trigger invincibility
                 transitionStage = 2;
                 render.flipX = c_flipped;
-                if(c_targetScene != null) SceneManager.LoadScene(c_targetScene.name);
+                if (c_targetScene != null) SceneManager.LoadScene(c_targetScene.name);
                 transform.position = c_spawnPos;
                 targetPos = c_spawnPos;
                 Start();
+                destructionPass = true;
             }
 
 
@@ -286,6 +307,7 @@ public class PlayerMovement : MonoBehaviour
             newDayText.text = "GIORNO " + CurrentData.day;
             FoodManager.foodTaken = 0;
             c_targetScene = newDayTarget;
+            foodPositions = new List<Vector2>();
         }
     }
 
