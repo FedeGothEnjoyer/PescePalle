@@ -197,6 +197,7 @@ MonoBehaviour:
   pushBackDurationPlayer: 0.7
   pushBackDurationEnemy: 1
   pushedBackEnemy: {fileID: 21300000, guid: 3908a0b7695fe594a94346f581caa31f, type: 3}
+  isPushedBack: 0
   targetPositionEnemy: {x: 0, y: 0}
 --- !u!95 &3851422933518753512
 Animator:
@@ -282,6 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6a39c8162de54ebca01cc592f6e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockDuration: 5
+  blockDuration: 3
   Attackcooldown: 5
   polpoBlocking: {fileID: 9100000, guid: 16517003a9deaf340a42cf3ad0771541, type: 2}

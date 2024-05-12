@@ -189,7 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47e66efa53f061b4582b37db68e3c6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   scoutingRange: 1
   changeIdlePositionRate: 2
   chaseDistance: 6
@@ -198,6 +197,7 @@ MonoBehaviour:
   pushBackDurationPlayer: 0.7
   pushBackDurationEnemy: 1
   pushedBackEnemy: {fileID: 21300000, guid: 5501bfba61ac4944a895c2457b84c0d0, type: 3}
+  isPushedBack: 0
   targetPositionEnemy: {x: 0, y: 0}
 --- !u!95 &3437988775498998885
 Animator:
@@ -283,6 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6a39c8162de54ebca01cc592f6e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockDuration: 5
+  blockDuration: 3
   Attackcooldown: 5
   polpoBlocking: {fileID: 9100000, guid: b7168ec7426cb9b468b3fbcd0f5ef0cf, type: 2}

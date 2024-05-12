@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Stop Range")]
     [SerializeField] float itemStopRange = 2f;
     public float wallStopRange = 2f;
+    [SerializeField] float wallDistancingSpeed;
     [Header("Invincibility")]
     [SerializeField] float invincibleTime = 1f;
 
@@ -139,6 +140,8 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        DistanceWalls();
+
         if (stunned)
         {
             dashing = false;
@@ -201,7 +204,7 @@ public class PlayerMovement : MonoBehaviour
     void CheckForWall()
     {
         var collider = GetComponent<CircleCollider2D>();
-        RaycastHit2D ray = Physics2D.CircleCast(transform.position, collider.radius, -((Vector2)transform.position - targetPos).normalized, 10f, LayerMask.GetMask("walls"));
+        RaycastHit2D ray = Physics2D.CircleCast(transform.position, collider.radius*0.5f, -((Vector2)transform.position - targetPos).normalized, 10f, LayerMask.GetMask("walls"));
         if (ray.collider != null && ray.distance < ((Vector2)transform.position - targetPos).magnitude && (targetPos - ray.point).sqrMagnitude < (targetPos - (Vector2)transform.position).sqrMagnitude)
         {
             var vec = ray.point - (Vector2)transform.position;
@@ -283,6 +286,30 @@ public class PlayerMovement : MonoBehaviour
             newDayText.text = "GIORNO " + CurrentData.day;
             FoodManager.foodTaken = 0;
             c_targetScene = newDayTarget;
+        }
+    }
+
+    private void DistanceWalls()
+	{
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Vector2.down, 0.7f, LayerMask.GetMask("walls"));
+        if (ray.collider != null)
+        {
+            targetPos = new Vector2(targetPos.x, Mathf.Lerp(targetPos.y, targetPos.y+1f, wallDistancingSpeed * Time.deltaTime));
+        }
+        ray = Physics2D.Raycast(transform.position, Vector2.left, 0.7f, LayerMask.GetMask("walls"));
+        if (ray.collider != null)
+        {
+            targetPos = new Vector2(Mathf.Lerp(targetPos.x, targetPos.x + 1f, wallDistancingSpeed * Time.deltaTime), targetPos.y);
+        }
+        ray = Physics2D.Raycast(transform.position, Vector2.right, 0.7f, LayerMask.GetMask("walls"));
+        if (ray.collider != null)
+        {
+            targetPos = new Vector2(Mathf.Lerp(targetPos.x, targetPos.x - 1f, wallDistancingSpeed * Time.deltaTime), targetPos.y);
+        }
+        ray = Physics2D.Raycast(transform.position, Vector2.up, 0.7f, LayerMask.GetMask("walls"));
+        if (ray.collider != null)
+        {
+            targetPos = new Vector2(targetPos.x, Mathf.Lerp(targetPos.y, targetPos.y - 1f, wallDistancingSpeed * Time.deltaTime));
         }
     }
 

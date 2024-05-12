@@ -197,6 +197,7 @@ MonoBehaviour:
   pushBackDurationPlayer: 0.2
   pushBackDurationEnemy: 1
   pushedBackEnemy: {fileID: 21300000, guid: be2c00affbac5c44992f3057342f4fbd, type: 3}
+  isPushedBack: 0
   targetPositionEnemy: {x: 0, y: 0}
 --- !u!95 &7776508010997143932
 Animator:
@@ -283,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NearAnimationDistance: 4
-  slowDuration: 6
+  slowDuration: 3
   speedReducer: 0.5
   Attackcooldown: 1.5
   piranhaBite: {fileID: 9100000, guid: dd407b0d30d9a8842b6770842c501be8, type: 2}

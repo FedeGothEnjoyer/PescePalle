@@ -1734,11 +1734,12 @@ MonoBehaviour:
   dashSpeed: 17
   dashRange: 5
   dashEffect: {fileID: 3292802066633390000, guid: 8b1fae24ad9a1ea49bb835a87e924369, type: 3}
-  dashFrequency: 1
+  dashFrequency: 0.6
   inflateDuration: 5
-  inflateCooldown: 3
+  inflateCooldown: 1.2
   itemStopRange: 2
   wallStopRange: 0.5
+  wallDistancingSpeed: 2
   invincibleTime: 0.5
   stunned: 0
   blackFade: {fileID: 602058801}

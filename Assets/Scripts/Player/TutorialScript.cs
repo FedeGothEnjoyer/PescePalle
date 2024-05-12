@@ -32,7 +32,7 @@ public class TutorialScript : MonoBehaviour
         InputSystem.dashEnabled = false;
         InputSystem.inflateEnabled = false;
 
-        messageManager.ActiveMessage("Clicca sullo schermo col tasto sinistro del muose per muoverti verso un punto.");
+        messageManager.ActiveMessage("Clicca sullo schermo con il tasto sinistro del mouse per muoverti verso un punto.");
 
         while (!Input.GetMouseButtonDown(0))
         {
@@ -68,31 +68,22 @@ public class TutorialScript : MonoBehaviour
         InputSystem.playerInputEnabled = false;
         Destroy(point2);
         Instantiate(woodBreakEffect, point2.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
-
-        messageManager.ActiveMessage("Non dimenticarti che lo scatto lo puoi fare anche mentre sei in movimento.");
-        yield return new WaitForSeconds(6);
-        messageManager.ActiveMessage("Inoltre ti rende invincibile dai pericoli per tutto il periodo dello scatto.");
+        messageManager.ActiveMessage("Puoi usare lo scatto per schivare i nemici e muoverti più velocemente!");
         yield return new WaitForSeconds(6);
 
         // GONFIAMENTO //
         InputSystem.playerInputEnabled = true;
         InputSystem.inflateEnabled = true;
 
-        messageManager.ActiveMessage("Cliccando spazio il pesce è in grado di gonfiarsi, questo fa allontanare i pesci non amichevoli.");
+        messageManager.ActiveMessage("Premi il pulsante spazio per gonfiarti e allontanare i nemici.");
+        yield return new WaitForSeconds(6);
+        messageManager.ActiveMessage("Se rimani gonfiato i nemici perderanno interesse e smetteranno di inseguirti.");
         yield return new WaitForSeconds(6);
 
         InputSystem.playerMovementEnabled = true;
         InputSystem.dashEnabled = true;
 
-        messageManager.ActiveMessage("Ora prova ad allontanare il pesce nemico nel momento in cui ti colpisce. Clicca spazio per gonfiarti");
-
-        while (!enemyManager.isPushedBack)
-        {
-            yield return null;
-        }
-
-        yield return new WaitForSeconds(2);
-        messageManager.ActiveMessage("Bravo! Provaci un'altra volta! Clicca spazio per gonfiarti.");
+        messageManager.ActiveMessage("Ora prova ad allontanare il pesce nemico mentre si avvicina. Premi spazio per gonfiarti!");
 
         while (!enemyManager.isPushedBack)
         {
@@ -100,13 +91,23 @@ public class TutorialScript : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);
-        messageManager.ActiveMessage("Complimenti! Hai superato il Tutorial! Prosegui per iniziare il gioco.");
+        messageManager.ActiveMessage("Bravo! Ancora una volta! Premi spazio per gonfiarti.");
+
+        while (!enemyManager.isPushedBack)
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1);
+        messageManager.ActiveMessage("Complimenti, Hai superato il Tutorial! Prosegui verso destra per iniziare il gioco.");
         CurrentData.day = 0;
 
         Destroy(point3);
         Instantiate(woodBreakEffect, point3.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
+    }
 
-        yield return new WaitForSeconds(1);
+	private void OnDestroy()
+	{
         messageManager.DeActiveMessage();
     }
 }
