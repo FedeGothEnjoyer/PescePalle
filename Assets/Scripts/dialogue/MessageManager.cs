@@ -45,7 +45,7 @@ public class MessageManager : MonoBehaviour
         StartCoroutine(ShowMessage(message));
     }
 
-    public void DeActiveMessage(string message)
+    public void DeActiveMessage()
     {
         StopAllCoroutines();
         StartCoroutine(HideMessage());

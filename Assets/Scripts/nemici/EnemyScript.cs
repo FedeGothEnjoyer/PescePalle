@@ -23,7 +23,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] float pushDuration = 1f;
     public static int isChasing;
     private float current_time;
-    private Vector2 startPos;
+    public Vector2 startPos;
     private Vector2 targetPos;
     private bool canChase = true;
     private bool canReturn = true;

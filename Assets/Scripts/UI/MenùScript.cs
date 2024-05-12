@@ -8,8 +8,22 @@ using UnityEngine.SceneManagement;
 public class MenùScript : MonoBehaviour
 {
     [SerializeField] List<SceneAsset> taneGiorni;
+    [SerializeField] RectTransform title;
+    [SerializeField] float animationStrength;
+    [SerializeField] float animationSpeed;
+    private float y;
 
-    public void StartNewGame()
+	private void Start()
+	{
+        y = title.position.y;
+	}
+
+	private void Update()
+	{
+        title.position = new Vector2(title.position.x, Mathf.Sin(Time.time*animationSpeed)*animationStrength+y);
+	}
+
+	public void StartNewGame()
     {
         SceneManager.LoadScene("Tana");
         CurrentData.day = 1;

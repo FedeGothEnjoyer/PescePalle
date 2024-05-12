@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     private int transitionStage = 0;
     private float transitionTimer;
     [SerializeField] private bool newDayAnimation;
+    private bool firstLoad = true;
 
     public static Vector2 targetPos;
 
@@ -67,6 +68,9 @@ public class PlayerMovement : MonoBehaviour
         DontDestroyOnLoad(this);
         if (active != null && active != this) DestroyImmediate(gameObject);
         else active = this;
+        transitionStage = 2;
+        transitionTimer = 0.5f*transitionDuration;
+        firstLoad = true;
     }
 
 
@@ -98,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
         if (transitionStage != 0)
         {
             transitionTimer += Time.deltaTime;
-            if(newDayAnimation) transitionTimer -= Time.deltaTime * 0.75f;
+            if(newDayAnimation || firstLoad) transitionTimer -= Time.deltaTime * 0.75f;
             Color color = blackFade.color;
             color.a = fadeCurve.Evaluate(transitionTimer / transitionDuration);
 			if (newDayAnimation)
@@ -113,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
                 color.a = 0;
                 newDayAnimation = false;
                 Start();
+                firstLoad = false;
             }
             blackFade.color = color;
 
@@ -124,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
                 PlayerMovement.active.Attack(); //trigger invincibility
                 transitionStage = 2;
                 render.flipX = c_flipped;
-                SceneManager.LoadScene(c_targetScene.name);
+                if(c_targetScene != null) SceneManager.LoadScene(c_targetScene.name);
                 transform.position = c_spawnPos;
                 targetPos = c_spawnPos;
                 Start();

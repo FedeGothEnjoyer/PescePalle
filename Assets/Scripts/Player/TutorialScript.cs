@@ -9,6 +9,7 @@ public class TutorialScript : MonoBehaviour
     [SerializeField] GameObject point1;
     [SerializeField] GameObject point2;
     [SerializeField] GameObject point3;
+    [SerializeField] GameObject woodBreakEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,7 @@ public class TutorialScript : MonoBehaviour
         InputSystem.dashEnabled = true;
         InputSystem.playerMovementEnabled = false;
         Destroy(point1);
+        Instantiate(woodBreakEffect, point1.transform.position, Quaternion.Euler(new Vector3(90,0,0)));
 
         messageManager.ActiveMessage("Bravo! Clicca il tasto destro del mouse per fare uno scatto e segui il percorso utilizzando solo questo tipo di movimento.");
 
@@ -65,6 +67,7 @@ public class TutorialScript : MonoBehaviour
 
         InputSystem.playerInputEnabled = false;
         Destroy(point2);
+        Instantiate(woodBreakEffect, point2.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
 
         messageManager.ActiveMessage("Non dimenticarti che lo scatto lo puoi fare anche mentre sei in movimento.");
         yield return new WaitForSeconds(6);
@@ -98,7 +101,12 @@ public class TutorialScript : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         messageManager.ActiveMessage("Complimenti! Hai superato il Tutorial! Prosegui per iniziare il gioco.");
+        CurrentData.day = 0;
 
         Destroy(point3);
+        Instantiate(woodBreakEffect, point3.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
+
+        yield return new WaitForSeconds(1);
+        messageManager.DeActiveMessage();
     }
 }
