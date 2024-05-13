@@ -38,7 +38,7 @@ public class MurenaAttack : MonoBehaviour
             EnemyManager.forceIdleEveryone = false;
         }
 
-        if(Vector2.Distance(transform.position, target.transform.position) <= electricDistance)
+        if(Vector2.Distance(transform.position, target.transform.position) <= electricDistance && !EnemyManager.forceIdleEveryone)
         {
             if(animator.runtimeAnimatorController != electicMurena)
 			{

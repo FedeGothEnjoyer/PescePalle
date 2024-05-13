@@ -33716,7 +33716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: newDayTarget
-      value: 
+      value: Tana
       objectReference: {fileID: 0}
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: spawnPosition.x

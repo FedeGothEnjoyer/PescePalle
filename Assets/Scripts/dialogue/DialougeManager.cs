@@ -33,6 +33,8 @@ public class DialougeManager : MonoBehaviour
         if (EnemyManager.chasingCount != 0)
             return;
 
+        if (nameText == null) nameText = GameObject.Find("Name").GetComponent<Text>();
+
         InputSystem.playerInputEnabled = false;
         //Avvio l'animazione
         animator = GameObject.Find("DialougeBox").GetComponent<Animator>();

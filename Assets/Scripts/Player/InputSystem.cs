@@ -72,9 +72,10 @@ public class InputSystem : MonoBehaviour
                 if (objectClicked) player.MoveToObject(mousePos);
                 else player.MoveToPosition(mousePos);
             }
-            
+
             if (dialogueEnabled)
 			{
+                if (dialogue == null) dialogue = GameObject.Find("DialougeManager").GetComponent<DialougeManager>();
                 dialogue.DisplayNextSentence();
 			}
         }
