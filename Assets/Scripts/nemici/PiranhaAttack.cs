@@ -2,6 +2,7 @@ using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PiranhaAttack : MonoBehaviour
 {
@@ -17,13 +18,21 @@ public class PiranhaAttack : MonoBehaviour
     GameObject target;
     AIPath aiPath;
     Animator animator;
+    Animator playerAnimator;
+    RuntimeAnimatorController playerAnimatorController;
     SpriteRenderer spriteRenderer;
     RuntimeAnimatorController animatorController;
+    float playerSpeed;
+    float playerMaxSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         target = PlayerMovement.active.gameObject;
+        playerSpeed = target.GetComponent<PlayerMovement>().speed;
+        playerMaxSpeed = target.GetComponent<PlayerMovement>().maxSpeed;
+        playerAnimator = target.GetComponent<Animator>();
+        playerAnimatorController = playerAnimator.runtimeAnimatorController;
         aiPath = transform.GetComponent<AIPath>();
         animator = transform.GetComponent<Animator>();
         animatorController = animator.runtimeAnimatorController;
@@ -68,7 +77,6 @@ public class PiranhaAttack : MonoBehaviour
 
         SpriteRenderer playerSpriteRenderer = player.transform.GetComponent<SpriteRenderer>();
         Animator playerAnimator = player.transform.GetComponent<Animator>();
-        RuntimeAnimatorController playerAnimatorcontroller = playerAnimator.runtimeAnimatorController;
         //Cambio sprite e animator
         animator.enabled = false;
         spriteRenderer.enabled = false;
@@ -86,18 +94,33 @@ public class PiranhaAttack : MonoBehaviour
 
         InputSystem.inflateEnabled = true;
         InputSystem.dashEnabled = true;
-        player.GetComponent<PlayerMovement>().speed /= speedReducer;
-        player.GetComponent<PlayerMovement>().maxSpeed /= speedReducer;
+        player.GetComponent<PlayerMovement>().speed = playerSpeed;
+        player.GetComponent<PlayerMovement>().maxSpeed = playerMaxSpeed;
 
         aiPath.canMove = false;
         transform.position = player.transform.position;
 
         animator.enabled = true;
         spriteRenderer.enabled = true;
-        playerAnimator.runtimeAnimatorController = playerAnimatorcontroller;
+        playerAnimator.runtimeAnimatorController = playerAnimatorController;
 
 
         PlayerMovement.isAttacked = false;
         PlayerMovement.active.Attack();
+    }
+
+    private void OnDestroy()
+    {
+        try
+        {
+            StopAllCoroutines();
+            InputSystem.inflateEnabled = true;
+            InputSystem.dashEnabled = true;
+            target.GetComponent<PlayerMovement>().speed = playerSpeed;
+            target.GetComponent<PlayerMovement>().maxSpeed = playerMaxSpeed;
+            playerAnimator.runtimeAnimatorController = playerAnimatorController;
+            PlayerMovement.isAttacked = false;
+        }
+        catch(System.Exception) { }
     }
 }

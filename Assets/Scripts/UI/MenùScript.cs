@@ -36,6 +36,10 @@ public class MenùScript : MonoBehaviour
     public void ContinueGame()
     {
         DataSystem.LoadData();
+        if(CurrentData.day == null)
+        {
+            return;
+        }
         SceneManager.LoadScene(taneGiorni[CurrentData.day-1]);
     }
 

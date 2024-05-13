@@ -1,5 +1,5 @@
 sceneSetups:
-- path: "Assets/Scenes/Men\xF9.unity"
+- path: Assets/Scenes/Giorno 1/Tana.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

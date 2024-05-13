@@ -9,6 +9,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] float scoutingRange = 1f;
     [SerializeField] float changeIdlePositionRate = 2f;
     [SerializeField] float chaseDistance = 6f;
+    [SerializeField] float maxDistanceFromStart = 15f;
     [Header("Pushback")]
     [SerializeField] float pushBackMagnitude = 15f;
     [SerializeField] float pushBackMagnitudeReduceForPlayer = 0.5f;
@@ -58,9 +59,9 @@ public class EnemyManager : MonoBehaviour
         {
             aiPath.canMove = true;
             float distanceToPlayer = Vector2.Distance(transform.position, target.transform.position);
-
+            float distanceToStart = ((Vector2)transform.position - startPosition).sqrMagnitude;
             //chase player
-            if (!forceIdle && distanceToPlayer <= chaseDistance && (!forceIdleEveryone || gameObject.tag == "piranha"))
+            if ((!forceIdle && distanceToPlayer <= chaseDistance && (!forceIdleEveryone || gameObject.tag == "piranha")) && distanceToStart <= maxDistanceFromStart * maxDistanceFromStart)
             {
                 spriteRenderer.flipX = target.transform.position.x > transform.position.x;
 
@@ -135,8 +136,6 @@ public class EnemyManager : MonoBehaviour
 
     IEnumerator PushBack(Vector2 direction, float EnemyDuration, float PlayerDuration , float magnitude, float playerMultiplier, bool isAttack)
     {
-        //FIX : TODO : fare in modo che il movimento si fermi quando la vittima incontra un muro (IsTouchingWall va ma il movimento non si ferma comunque)
-
         target.GetComponent<PlayerMovement>().stunned = true;
         target.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         target.GetComponent<Rigidbody2D>().velocity = direction * playerMultiplier * magnitude;

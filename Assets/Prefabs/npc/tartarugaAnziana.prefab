@@ -101,6 +101,7 @@ MonoBehaviour:
   onClickEvent:
     m_PersistentCalls:
       m_Calls: []
+  distanceForSelect: 200
   dialouge:
     name: Tartaruga Anziana
     sentences:

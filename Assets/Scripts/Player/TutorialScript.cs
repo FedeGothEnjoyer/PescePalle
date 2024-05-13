@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialScript : MonoBehaviour
 {
@@ -10,23 +12,36 @@ public class TutorialScript : MonoBehaviour
     [SerializeField] GameObject point2;
     [SerializeField] GameObject point3;
     [SerializeField] GameObject woodBreakEffect;
+    [SerializeField] GameObject buttonUI;
+
+    private bool button; //PORCATA PIU' ATOMICA MAI VISTA D'ORA!!! PEGGIO DI ASSEMBLY (ho usato le region per nascondere l'orrore)
 
     // Start is called before the first frame update
     void Start()
     {
+        button = false;
         messageManager = MessageManager.instance;
         StartCoroutine(StartTutorial());
     }
 
     IEnumerator StartTutorial()
     {
+        yield return null; //per evitare un bug
         // START //
         InputSystem.playerInputEnabled = false;
+        buttonUI.SetActive(false);
+
         yield return new WaitForSeconds(2);
+
         messageManager.ActiveMessage("Benvenuto nel tutorial!");
+        #region input bottone
+        buttonUI.SetActive(true);
+        while (!button) yield return null;
+        button = false;
+        buttonUI.SetActive(false);
+        #endregion
 
         // PRIMO MOVIMENTO //
-        yield return new WaitForSeconds(5);
 
         InputSystem.playerInputEnabled = true;
         InputSystem.dashEnabled = false;
@@ -69,16 +84,30 @@ public class TutorialScript : MonoBehaviour
         Destroy(point2);
         Instantiate(woodBreakEffect, point2.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
         messageManager.ActiveMessage("Puoi usare lo scatto per schivare i nemici e muoverti più velocemente!");
-        yield return new WaitForSeconds(6);
+        #region input bottone
+        buttonUI.SetActive(true);
+        while(!button) yield return null;
+        button = false;
+        buttonUI.SetActive(false);
+        #endregion
 
         // GONFIAMENTO //
         InputSystem.playerInputEnabled = true;
         InputSystem.inflateEnabled = true;
 
         messageManager.ActiveMessage("Premi il pulsante spazio per gonfiarti e allontanare i nemici.");
-        yield return new WaitForSeconds(6);
+        #region input bottone
+        buttonUI.SetActive(true);
+        while (!button) yield return null;
+        button = false;
+        #endregion
         messageManager.ActiveMessage("Se rimani gonfiato i nemici perderanno interesse e smetteranno di inseguirti.");
-        yield return new WaitForSeconds(6);
+        #region input bottone
+        buttonUI.SetActive(true);
+        while (!button) yield return null;
+        button = false;
+        buttonUI.SetActive(false);
+        #endregion
 
         InputSystem.playerMovementEnabled = true;
         InputSystem.dashEnabled = true;
@@ -99,15 +128,26 @@ public class TutorialScript : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);
+
         messageManager.ActiveMessage("Complimenti, Hai superato il Tutorial! Prosegui verso destra per iniziare il gioco.");
+        #region input bottone
+        buttonUI.SetActive(true);
+        while (!button) yield return null;
+
+        messageManager.DeActiveMessage(); //per evitare un bug
+
+        button = false;
+        buttonUI.SetActive(false);
+        #endregion
+
         CurrentData.day = 0;
 
         Destroy(point3);
         Instantiate(woodBreakEffect, point3.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
     }
 
-	private void OnDestroy()
-	{
-        messageManager.DeActiveMessage();
+    public void ButtonPressed()
+    {
+        button = true;
     }
 }
