@@ -948,11 +948,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c32e57b53fd304c8c1834453fa9126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 102900000, guid: bd7d1b5c0e6a2ed4f989cf1d1420b215, type: 3}
+  target: Tana
   spawnPosition: {x: 3.5, y: 0}
   flipped: 1
   versoTana: 1
-  newDayTarget: {fileID: 102900000, guid: 1925d5e592b85e846baccca5a776ebde, type: 3}
+  newDayTarget: Tana 2
 --- !u!61 &556176085
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11167,11 +11167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3305262609285092149, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.64
+      value: -2.25
       objectReference: {fileID: 0}
     - target: {fileID: 3305262609285092149, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.23
+      value: 4.69
       objectReference: {fileID: 0}
     - target: {fileID: 3305262609285092149, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
       propertyPath: m_LocalPosition.z

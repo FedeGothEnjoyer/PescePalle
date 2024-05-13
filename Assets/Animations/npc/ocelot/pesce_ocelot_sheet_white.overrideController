@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pesce_ocelot_sheet_white
+  m_Controller: {fileID: 9100000, guid: 07b0f374161bde84db3e8dc23f17d710, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e18f438701a4efb439b950e3d16f645a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2738c7e3560624f45ad44a99d404757e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9c91f73e1b9922b42b300099b1742d79, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3054ceca86e1e8847acd1dd0eca804cd, type: 2}

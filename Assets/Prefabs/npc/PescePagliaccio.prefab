@@ -118,9 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e66d44271f7ce4e914b8528172c082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  notSelected: {fileID: 9100000, guid: 985c4f1100f198549a3f30c0dd344e41, type: 2}
-  selected: {fileID: 9100000, guid: 1956027f12c8249488e5e322a04485be, type: 2}
+  dialogue: {fileID: 0}
+  selected: {fileID: 22100000, guid: 96649badc1084c046a87f8c6783a9de3, type: 2}
   onClickEvent:
     m_PersistentCalls:
       m_Calls: []

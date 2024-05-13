@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -150,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
                 active.Attack(); //trigger invincibility
                 transitionStage = 2;
                 render.flipX = c_flipped;
-                if (c_targetScene != null) SceneManager.LoadScene(c_targetScene.name);
+                if (c_targetScene != null) SceneManager.LoadScene(c_targetScene);
                 transform.position = c_spawnPos;
                 targetPos = c_spawnPos;
                 Start();
@@ -291,9 +290,9 @@ public class PlayerMovement : MonoBehaviour
     //porcata galattica warning
     Vector2 c_spawnPos;
     bool c_flipped;
-    SceneAsset c_targetScene;
+    string c_targetScene;
 
-    public void ChangingRoom(Vector2 spawnPos, bool flipped, SceneAsset targetScene, bool versoTana, SceneAsset newDayTarget)
+    public void ChangingRoom(Vector2 spawnPos, bool flipped, string targetScene, bool versoTana, string newDayTarget)
     {
         transitionTimer = 0;
         transitionStage = 1;

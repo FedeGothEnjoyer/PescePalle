@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,11 +7,11 @@ public class InteractableBehaviour : MonoBehaviour
 {
 	SpriteRenderer render;
 	BoxCollider2D collision;
-	[SerializeField] DialougeManager dialogue;
+	DialougeManager dialogue;
 	Animator animator;
 	GameObject target;
-    [SerializeField] AnimatorController notSelected;
-	[SerializeField] AnimatorController selected;
+    RuntimeAnimatorController notSelected;
+	[SerializeField] AnimatorOverrideController selected;
 	[SerializeField] UnityEvent onClickEvent;
 
 	public Dialouge dialouge;
@@ -26,6 +25,7 @@ public class InteractableBehaviour : MonoBehaviour
         render = GetComponent<SpriteRenderer>();
 		target = PlayerMovement.active.gameObject;
 		dialogue = GameObject.Find("DialougeManager").GetComponent< DialougeManager>();
+		notSelected = animator.runtimeAnimatorController;
 	}
 
     private void Update()

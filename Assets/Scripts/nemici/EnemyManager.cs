@@ -1,10 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-using static UnityEngine.GraphicsBuffer;
-using UnityEngine.UIElements;
-using TMPro;
 
 public class EnemyManager : MonoBehaviour
 {

@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    [SerializeField] SceneAsset target;
+    [SerializeField] string target;
     [SerializeField] Vector2 spawnPosition;
     [SerializeField] bool flipped;
     [SerializeField] bool versoTana;
-    [SerializeField] SceneAsset newDayTarget;
+    [SerializeField] string newDayTarget;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

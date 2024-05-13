@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenùScript : MonoBehaviour
 {
-    [SerializeField] List<SceneAsset> taneGiorni;
+    [SerializeField] List<string> taneGiorni;
     [SerializeField] RectTransform title;
     [SerializeField] float animationStrength;
     [SerializeField] float animationSpeed;
@@ -38,7 +36,7 @@ public class MenùScript : MonoBehaviour
     public void ContinueGame()
     {
         DataSystem.LoadData();
-        SceneManager.LoadScene(taneGiorni[CurrentData.day-1].name);
+        SceneManager.LoadScene(taneGiorni[CurrentData.day-1]);
     }
 
     public void QuitGame()

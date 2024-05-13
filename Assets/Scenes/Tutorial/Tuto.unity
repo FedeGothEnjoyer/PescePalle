@@ -33704,8 +33704,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: target
-      value: 
-      objectReference: {fileID: 102900000, guid: bd7d1b5c0e6a2ed4f989cf1d1420b215, type: 3}
+      value: Tana
+      objectReference: {fileID: 0}
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: flipped
       value: 1
@@ -33717,7 +33717,7 @@ PrefabInstance:
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: newDayTarget
       value: 
-      objectReference: {fileID: 102900000, guid: bd7d1b5c0e6a2ed4f989cf1d1420b215, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: spawnPosition.x
       value: 0
