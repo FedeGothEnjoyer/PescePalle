@@ -1042,7 +1042,7 @@ MonoBehaviour:
   spawnPosition: {x: 3.5, y: 0}
   flipped: 1
   versoTana: 1
-  newDayTarget: Tana 3
+  newDayTarget: Tana 4
 --- !u!61 &556176085
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1144,11 +1144,12 @@ PrefabInstance:
       objectReference: {fileID: 2609909328470512074}
     - target: {fileID: 122102496593705263, guid: 57b7842c8d3a9644f82ddc71dfac685e, type: 3}
       propertyPath: dialouge.sentences.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 122102496593705263, guid: 57b7842c8d3a9644f82ddc71dfac685e, type: 3}
       propertyPath: dialouge.sentences.Array.data[0]
-      value: L'altra notte ci sono state delle correnti molto forti,  stai all'erta!
+      value: L'altra notte l'acqua stava trascinando numerosi detriti con una forza
+        mai vista, stai attento!
       objectReference: {fileID: 0}
     - target: {fileID: 122102496593705263, guid: 57b7842c8d3a9644f82ddc71dfac685e, type: 3}
       propertyPath: dialouge.sentences.Array.data[1]

@@ -549,16 +549,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[0]
-      value: Niente male per il tuo primo giorno!
+      value: Buongiorno amico mio!
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[1]
-      value: Ormai te la sai cavare da solo, quindi mentre dormivi ho rimosso la
-        carcassa che bloccava la strada. Vai ed esplora gli oceani sconfinati!
+      value: Ormai te la sai cavare da solo, quindi mentre dormivi ho rimosso i detriti
+        che bloccavano la strada. Vai ed esplora gli oceani sconfinati!
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[2]
-      value: Mi raccomando, quando hai trovato due pezzi di cibo torna alla tana.
+      value: Mi raccomando, quando hai trovato due pezzi di cibo torna nella tana.
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497506, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: m_Name

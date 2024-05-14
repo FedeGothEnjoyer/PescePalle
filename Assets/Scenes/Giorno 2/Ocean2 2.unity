@@ -3344,12 +3344,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8110320573519601605, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
       propertyPath: dialouge.sentences.Array.data[0]
-      value: "Le correnti di qualche giorno fa hanno portato qui queste assi di legno,
-        la via \xE8 sbarrata!"
+      value: "Hey ciao! Le correnti di qualche giorno fa hanno portato qui queste
+        assi di legno, la via \xE8 sbarrata!"
       objectReference: {fileID: 0}
     - target: {fileID: 8110320573519601605, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
       propertyPath: dialouge.sentences.Array.data[1]
-      value: Forse vengono da un vascello sommerso...
+      value: "Chiss\xE0 da dove vengono..."
       objectReference: {fileID: 0}
     - target: {fileID: 8110320573519601609, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
       propertyPath: m_Name

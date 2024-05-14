@@ -62,4 +62,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Giorno 3/Ocean3 3.unity
     guid: c969b722878339942a6bbd4a36ce4828
+  - enabled: 1
+    path: Assets/Scenes/Giorno 4/Ocean0 4.unity
+    guid: 7ed1120486095174ab0c8eb0fccb8558
+  - enabled: 1
+    path: Assets/Scenes/Giorno 4/Tana 4.unity
+    guid: d6d6b9282fdb8a148b8b3a5f30651b62
   m_configObjects: {}

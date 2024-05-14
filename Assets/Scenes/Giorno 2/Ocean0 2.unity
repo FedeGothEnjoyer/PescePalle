@@ -1152,8 +1152,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 122102496593705263, guid: 57b7842c8d3a9644f82ddc71dfac685e, type: 3}
       propertyPath: dialouge.sentences.Array.data[1]
-      value: Puoi provare a cercare nella stanza qui a destra, ma stai attento! Non
-        tutti i pesci sono amichevoli.
+      value: Puoi provare a cercare qui intorno, ma stai attento! Non tutti i pesci
+        sono amichevoli.
       objectReference: {fileID: 0}
     - target: {fileID: 122102496593705263, guid: 57b7842c8d3a9644f82ddc71dfac685e, type: 3}
       propertyPath: dialouge.sentences.Array.data[2]

@@ -175,12 +175,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
+      propertyPath: dialouge.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[0]
-      value: Giorno 3
+      value: Buongiorno!
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[1]
-      value: Cazzo vuoi
+      value: "Questa \xE8 stata una notte molto movimentata, ho dovuto chiudere la
+        tana altrimenti saremmo stati spazzati via!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
+      propertyPath: dialouge.sentences.Array.data[2]
+      value: "Ti aspetto qui quando avrai il cibo, anche se temo sar\xE0 difficile
+        oggi."
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497506, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: m_Name

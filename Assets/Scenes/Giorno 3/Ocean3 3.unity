@@ -327,8 +327,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8110320573519601605, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
+      propertyPath: dialouge.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8110320573519601605, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
       propertyPath: dialouge.sentences.Array.data[0]
-      value: Hai visto? Le correnti hanno aperto il passaggio!
+      value: Hai visto? Le correnti hanno aperto il passaggio! Non avevo mai visto
+        questo posto prima d'ora ma sembra ci sia dell'altro.
       objectReference: {fileID: 0}
     - target: {fileID: 8110320573519601605, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
       propertyPath: dialouge.sentences.Array.data[1]
