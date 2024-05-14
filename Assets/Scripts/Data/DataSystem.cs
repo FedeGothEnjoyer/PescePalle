@@ -31,7 +31,8 @@ public static class DataSystem
         }
         else
         {
-            Debug.LogError("Save file not found in " + path);
+            Debug.Log("Save file not found in " + path);
+            CurrentData.day = -1;
         }
 
         Debug.Log(CurrentData.day);

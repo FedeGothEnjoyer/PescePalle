@@ -12,7 +12,7 @@ public class LanternaScript : MonoBehaviour
     [SerializeField] float attackCooldown = 5;
     [SerializeField] float nearAnimationDistance = 4;
     [SerializeField] RuntimeAnimatorController lanternaChaseAnimation;
-    [SerializeField] Image light;
+    [SerializeField] Image lightOverlay;
 
     float currentTimeAttackCooldown;
     AIPath aiPath;
@@ -29,6 +29,7 @@ public class LanternaScript : MonoBehaviour
         aiPath = transform.GetComponent<AIPath>();
         animator = transform.GetComponent<Animator>();
         lanternaIdleAnimation = animator.runtimeAnimatorController;
+        lightOverlay = GameObject.Find("LanternaLight").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -71,13 +72,13 @@ public class LanternaScript : MonoBehaviour
         aiPath.canMove = false;
         InputSystem.playerInputEnabled = false;
 
-        light.gameObject.SetActive(true);
+        lightOverlay.gameObject.SetActive(true);
         newLightColor = Color.white;
         newLightColor.a = 1;
         //Transizione Giallo - Bianco
-        while(light.color.a < 0.99f)
+        while(lightOverlay.color.a < 0.99f)
         {
-            light.color = Color.Lerp(light.color, newLightColor, lightTransitionSpeed * Time.deltaTime);
+            lightOverlay.color = Color.Lerp(lightOverlay.color, newLightColor, lightTransitionSpeed * Time.deltaTime);
             yield return null;
         }    
 
@@ -87,12 +88,12 @@ public class LanternaScript : MonoBehaviour
         newLightColor = Color.yellow;
         newLightColor.a = 0;
         //Transizione Bianco - Giallo
-        while (light.color.a > 0.05f)
+        while (lightOverlay.color.a > 0.05f)
         {
-            light.color = Color.Lerp(light.color, newLightColor, lightTransitionSpeed * Time.deltaTime);
+            lightOverlay.color = Color.Lerp(lightOverlay.color, newLightColor, lightTransitionSpeed * Time.deltaTime);
             yield return null;
         }
-        light.gameObject.SetActive(false);
+        lightOverlay.gameObject.SetActive(false);
 
         InputSystem.playerInputEnabled = true;
         aiPath.canMove = true;

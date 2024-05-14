@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenùScript : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class MenùScript : MonoBehaviour
 	private void Start()
 	{
         y = title.position.y;
+        DataSystem.LoadData();
+        if (CurrentData.day == -1)
+		{
+            GameObject.Find("Continue").GetComponent<Button>().interactable = false;
+		}
 	}
 
 	private void Update()
@@ -36,7 +42,7 @@ public class MenùScript : MonoBehaviour
     public void ContinueGame()
     {
         DataSystem.LoadData();
-        if(CurrentData.day == null)
+        if(CurrentData.day == -1)
         {
             return;
         }
