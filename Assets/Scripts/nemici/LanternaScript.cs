@@ -59,7 +59,6 @@ public class LanternaScript : MonoBehaviour
     {
         if (!PlayerMovement.isInvincible && !PlayerMovement.dashing && collision.gameObject.layer == 6 && !PlayerMovement.isInflated && currentTimeAttackCooldown >= attackCooldown && !PlayerMovement.isAttacked)
         {
-            Debug.Log("Touched.");
             StopAllCoroutines();
             StartCoroutine(BlockPlayer(collision.gameObject));
         }
