@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c32e57b53fd304c8c1834453fa9126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: Tana 4
+  target: Tana 4 2
   spawnPosition: {x: 3.5, y: 0}
   flipped: 1
   versoTana: 1
@@ -10819,7 +10819,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146460464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: 1}
+  m_LocalPosition: {x: 0, y: 7, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1880043420}
@@ -10916,7 +10916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 724210128381066164, guid: 6e24a9ef87b914d48813a1dd419dcdbf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 724210128381066164, guid: 6e24a9ef87b914d48813a1dd419dcdbf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11240,6 +11240,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3587590711583336634, guid: cd4c98d5d0263d0428ea00c6c8e1398c, type: 3}
   m_PrefabInstance: {fileID: 1705015407}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1753456022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 724210128381066161, guid: 6e24a9ef87b914d48813a1dd419dcdbf, type: 3}
+  m_PrefabInstance: {fileID: 1159691142}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1753456023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753456022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3942e76bc48e58a42b0752fd7e933e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.7073902
+      value: 0.5587817
+      inSlope: 0.3030966
+      outSlope: 0.3030966
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.24902181
+    - serializedVersion: 3
+      time: 1.0048218
+      value: 0.002357483
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1880043420 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 724210128381066164, guid: 6e24a9ef87b914d48813a1dd419dcdbf, type: 3}

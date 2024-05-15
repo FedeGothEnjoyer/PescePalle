@@ -6,6 +6,7 @@ public class CameraSystem : MonoBehaviour
 {
     GameObject target;
     [SerializeField] float followSpeed = 5f;
+    public Vector2 curPos;
 
 	private void Start()
 	{
@@ -20,6 +21,7 @@ public class CameraSystem : MonoBehaviour
             Vector3 desiredPosition = target.transform.position + new Vector3(0, 0, -10);
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, followSpeed * Time.deltaTime);
             transform.position = smoothedPosition;
+            curPos = smoothedPosition;
         }
     }
 }

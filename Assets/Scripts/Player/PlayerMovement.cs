@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
             transitionTimer = 0.5f * transitionDuration;
             firstLoad = true;
             foodPositions = new List<Vector2>();
+            CurrentData.shipFallen = false;
         }
     }
 

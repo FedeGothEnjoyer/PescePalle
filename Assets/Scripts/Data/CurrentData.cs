@@ -6,4 +6,5 @@ using UnityEngine;
 public static class CurrentData
 {
     public static int day;
+    public static bool shipFallen;
 }
