@@ -14,7 +14,7 @@ public class ShipScript : MonoBehaviour
     {
 		if (CurrentData.shipFallen)
 		{
-            transform.position = new Vector2(0, -1);
+            transform.localPosition = new Vector3(0, -1, 10);
             currentTime = time;
             return;
 		}
