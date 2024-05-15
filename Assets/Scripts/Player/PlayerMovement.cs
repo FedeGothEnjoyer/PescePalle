@@ -55,10 +55,14 @@ public class PlayerMovement : MonoBehaviour
     private bool firstLoad = true;
     private bool destructionPass = false;
 
+    [Header("Sounds")]
+    [SerializeField] AudioClip dashSound;
+
     public static Vector2 targetPos;
 
     SpriteRenderer render;
     Animator animator;
+    AudioSource audioSource;
 
     public static PlayerMovement active;
 
@@ -87,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
         targetPos = transform.position;
         render = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         startSpeed = speed;
         startMaxSpeed = maxSpeed;
         startDashSpeed = dashSpeed;
@@ -238,6 +243,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (dashTimer >= dashFrequency)
         {
+            audioSource.clip = dashSound;
+            audioSource.Play();
             dashTimer = 0;
             var vec = target - (Vector2)transform.position;
             if (vec.magnitude > dashRange) vec = vec.normalized * dashRange;

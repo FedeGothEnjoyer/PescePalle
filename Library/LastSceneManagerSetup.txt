@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Giorno 4/Ship1 4.unity
+- path: Assets/Scenes/Giorno 4/Ship0 4.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

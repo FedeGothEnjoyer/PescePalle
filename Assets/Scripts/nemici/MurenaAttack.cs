@@ -43,7 +43,6 @@ public class MurenaAttack : MonoBehaviour
             if(animator.runtimeAnimatorController != electicMurena)
 			{
                 animator.runtimeAnimatorController = electicMurena;
-                Debug.Log("switched");
             }
         }
         else if(animator.runtimeAnimatorController != animatorControllerMurena)

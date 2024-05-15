@@ -280,77 +280,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 724210128381066164, guid: 6e24a9ef87b914d48813a1dd419dcdbf, type: 3}
   m_PrefabInstance: {fileID: 2030731497}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &368812322
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8110320573519601604, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601604, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -10.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601604, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601604, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601604, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601604, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601604, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601604, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601604, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601604, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601604, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601605, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: dialouge.sentences.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601605, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: dialouge.sentences.Array.data[0]
-      value: Tutto bene amico? Un masso mi ha quasi preso in testa in mezzo di quel
-        trambusto.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601605, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: dialouge.sentences.Array.data[1]
-      value: Non avevo mai visto questo posto prima d'ora, ma sembra che qui ci sia
-        dell'altro cibo.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8110320573519601609, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
-      propertyPath: m_Name
-      value: PesceOcelot
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 01315d2632cc26546aca995f0e4eb0e8, type: 3}
 --- !u!1001 &823188625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -844,6 +773,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4110141930051001784, guid: 531cc39e1814d4c48b067a89fed8a8a6, type: 3}
   m_PrefabInstance: {fileID: 1313570056}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1384381019
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2405953312175394160, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: dialouge.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394160, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: dialouge.sentences.Array.data[0]
+      value: "Ho sentito un gran fracasso provenire da l\xEC sotto."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394160, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: dialouge.sentences.Array.data[1]
+      value: "Dopotutto forse quel posto non \xE8 davvero tanto tranquillo..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394161, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394161, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.918508
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394161, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.17826527
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394161, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394161, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394161, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394161, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394161, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394161, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394161, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394161, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2405953312175394172, guid: e7333319df1ce734382c91e1c879acae, type: 3}
+      propertyPath: m_Name
+      value: SimoneIlSalmone
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e7333319df1ce734382c91e1c879acae, type: 3}
 --- !u!1001 &1435485268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29872,7 +29870,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3305262609285092149, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3305262609285092149, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
       propertyPath: m_LocalPosition.x

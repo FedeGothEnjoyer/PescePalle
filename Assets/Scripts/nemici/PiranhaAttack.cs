@@ -12,6 +12,7 @@ public class PiranhaAttack : MonoBehaviour
     [SerializeField] float Attackcooldown = 6f;
     [SerializeField] RuntimeAnimatorController piranhaBite;
     [SerializeField] RuntimeAnimatorController piranhaNear;
+    [SerializeField] AudioClip biteSound;
 
     private float currentTimeAttackCooldown = 0f;
 
@@ -22,6 +23,8 @@ public class PiranhaAttack : MonoBehaviour
     RuntimeAnimatorController playerAnimatorController;
     SpriteRenderer spriteRenderer;
     RuntimeAnimatorController animatorController;
+    AudioSource audioSource;
+
     float playerSpeed;
     float playerMaxSpeed;
 
@@ -29,6 +32,7 @@ public class PiranhaAttack : MonoBehaviour
     void Start()
     {
         target = PlayerMovement.active.gameObject;
+        audioSource = transform.GetComponent<AudioSource>();
         playerSpeed = target.GetComponent<PlayerMovement>().speed;
         playerMaxSpeed = target.GetComponent<PlayerMovement>().maxSpeed;
         playerAnimator = target.GetComponent<Animator>();
@@ -74,6 +78,9 @@ public class PiranhaAttack : MonoBehaviour
     IEnumerator SlowPlayer(GameObject player)
     {
         PlayerMovement.isAttacked = true;
+
+        audioSource.clip = biteSound;
+        audioSource.Play();
 
         SpriteRenderer playerSpriteRenderer = player.transform.GetComponent<SpriteRenderer>();
         Animator playerAnimator = player.transform.GetComponent<Animator>();

@@ -21,7 +21,7 @@ public class EnemyManager : MonoBehaviour
     AIPath aiPath;
     Rigidbody2D rigidBody;
     Animator animator;
-    SpriteRenderer spriteRenderer;
+    SpriteRenderer spriteRenderer;   
 
     public static int chasingCount; //Disables the dialouge if the player is chased by something
 
