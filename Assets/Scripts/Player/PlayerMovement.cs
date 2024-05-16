@@ -79,6 +79,8 @@ public class PlayerMovement : MonoBehaviour
             firstLoad = true;
             foodPositions = new List<Vector2>();
             CurrentData.shipFallen = false;
+            newDayText.text = "GIORNO " + CurrentData.day;
+            FoodManager.foodTaken = 0;
         }
     }
 
@@ -284,11 +286,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopInflate()
     {
+        if(isInflated) animator.Play("plrAttackExit");
         isInflated = false;
 
         InflateCooldownTimer = 0;
         InflateDurationTimer = 0;
-        animator.Play("plrAttackExit");
+        
         maxSpeed = startMaxSpeed;
         speed = startSpeed;
         dashSpeed = startDashSpeed;
@@ -307,6 +310,7 @@ public class PlayerMovement : MonoBehaviour
         c_spawnPos = spawnPos;
         c_flipped = flipped;
         c_targetScene = targetScene;
+        StopInflate();
         if(versoTana && FoodManager.foodTaken >= 2)
 		{
             newDayAnimation = true;

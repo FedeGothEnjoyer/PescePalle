@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    [SerializeField] string target;
+    public string target;
     [SerializeField] Vector2 spawnPosition;
     [SerializeField] bool flipped;
     [SerializeField] bool versoTana;

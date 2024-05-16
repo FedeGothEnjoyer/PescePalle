@@ -1796,7 +1796,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   transitionDuration: 0.5
   newDayText: {fileID: 1245185376573832967}
-  newDayAnimation: 0
+  newDayAnimation: 1
   dashSound: {fileID: 8300000, guid: f6ab36f56bb8195459da51387d8221db, type: 3}
 --- !u!114 &3305262609285092144
 MonoBehaviour:

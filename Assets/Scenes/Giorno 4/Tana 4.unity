@@ -201,6 +201,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
+--- !u!1 &444459073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1884251737937497506, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
+  m_PrefabInstance: {fileID: 444459072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &444459074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444459073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176a1e348aa8c084ab2b7fa933e67073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &723049316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7135783882516421781, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
@@ -570,6 +587,65 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e24a9ef87b914d48813a1dd419dcdbf, type: 3}
+--- !u!1 &803291542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 724210128381066161, guid: 6e24a9ef87b914d48813a1dd419dcdbf, type: 3}
+  m_PrefabInstance: {fileID: 803291541}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &803291543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803291542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3942e76bc48e58a42b0752fd7e933e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.0033416748
+      inSlope: 1.2099873
+      outSlope: 1.2099873
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.060205612
+    - serializedVersion: 3
+      time: 0.26548934
+      value: 0.04558681
+      inSlope: -0.022395894
+      outSlope: -0.022395894
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2775326
+      outWeight: 0.42330906
+    - serializedVersion: 3
+      time: 0.7484196
+      value: 0.049334124
+      inSlope: -0.066152535
+      outSlope: -0.066152535
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.37065604
+    - serializedVersion: 3
+      time: 0.99420166
+      value: -0.002319336
+      inSlope: -0.5004365
+      outSlope: -0.5004365
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.15607928
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1463198645
 GameObject:
   m_ObjectHideFlags: 0

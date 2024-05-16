@@ -13,7 +13,7 @@ public class DialougeManager : MonoBehaviour
 
     public Animator animator;
 
-    private Queue<string> sentences;
+    [HideInInspector] public Queue<string> sentences;
 
     static public DialougeManager instance;
 

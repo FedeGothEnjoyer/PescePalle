@@ -130,7 +130,7 @@ MonoBehaviour:
     - Ciao! Spero ti troverai bene qui sotto!
     - "Cosa? Simone ti ha dato fastidio? Lascialo stare, \xE8 solo invidioso della
       tranquillit\xE0 di questo luogo."
-    - "Lo cacciaci perch\xE9 mi dava solo fastidio."
+    - "Lo cacciai perch\xE9 mi dava solo fastidio."
     - Tu invece sarai sempre il benvenuto!
 --- !u!61 &459213265657865734
 BoxCollider2D:
