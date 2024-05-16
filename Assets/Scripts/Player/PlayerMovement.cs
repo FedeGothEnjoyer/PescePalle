@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Sounds")]
     [SerializeField] AudioClip dashSound;
+    [SerializeField] AudioClip inflateSound;
 
     public static Vector2 targetPos;
 
@@ -276,7 +277,8 @@ public class PlayerMovement : MonoBehaviour
     private void StartInflate()
     {
         isInflated = true;
-
+        audioSource.clip = inflateSound;
+        audioSource.Play();
 
         InflateCooldownTimer = 0;
         InflateDurationTimer = 0;

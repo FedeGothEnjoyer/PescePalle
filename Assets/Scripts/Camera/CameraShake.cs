@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     [SerializeField] AnimationCurve curve;
+    [SerializeField] bool activeOnLoad = false;
     float duration = 1f;
     static public CameraShake instance;
 
@@ -12,6 +13,11 @@ public class CameraShake : MonoBehaviour
 	{
         if (instance != null) Destroy(gameObject);
         else instance = this;
+	}
+
+	private void Start()
+	{
+        if (activeOnLoad) Shake(1000f);
 	}
 
 	public void Shake(float time)

@@ -315,6 +315,9 @@ MonoBehaviour:
   nameText: {fileID: 21628737}
   dialougeText: {fileID: 1369474235}
   animator: {fileID: 1306389854}
+  dialougeEnded:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &356803561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,6 +1640,7 @@ GameObject:
   - component: {fileID: 3305262609285092151}
   - component: {fileID: 3305262609285092144}
   - component: {fileID: 5222478397345790923}
+  - component: {fileID: 7623119788627667548}
   - component: {fileID: 3305262609285092145}
   - component: {fileID: 3305262609285092146}
   - component: {fileID: 3305262609285092147}
@@ -1798,6 +1802,7 @@ MonoBehaviour:
   newDayText: {fileID: 1245185376573832967}
   newDayAnimation: 1
   dashSound: {fileID: 8300000, guid: f6ab36f56bb8195459da51387d8221db, type: 3}
+  inflateSound: {fileID: 8300000, guid: 2d3c1ebd4fd03d5478e7b40bd1f66266, type: 3}
 --- !u!114 &3305262609285092144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1822,6 +1827,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce082437e09aa743916e8bcf41093e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7623119788627667548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3305262609285092156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e275620b7329140bbd65879359fa69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spottedSound: {fileID: 8300000, guid: c14f271c49ab1534abeb33c4f2fbbf9f, type: 3}
+  lightNumber: 0
+  shadowNumber: 0
 --- !u!58 &3305262609285092145
 CircleCollider2D:
   m_ObjectHideFlags: 0
