@@ -11,11 +11,15 @@ public class MurenaAttack : MonoBehaviour
     [SerializeField] float electricDistance = 4f;
     [SerializeField] RuntimeAnimatorController electicMurena;
     [SerializeField] RuntimeAnimatorController electicPlayer;
+    [SerializeField] AudioClip playerElectrified;
+    [SerializeField] AudioClip murenaElectrified;
 
     private float currentTimeAttackCooldown = 0f;
 
     Animator animator;
+    AudioSource audioSource;
     RuntimeAnimatorController animatorControllerMurena;
+    AudioSource playerAudioSource;
     SpriteRenderer playerSpriteRenderer;
     Animator playerAnimator;
     RuntimeAnimatorController playerAnimatorcontroller;
@@ -29,6 +33,8 @@ public class MurenaAttack : MonoBehaviour
         playerAnimatorcontroller = playerAnimator.runtimeAnimatorController;
         animator = transform.GetComponent<Animator>();
         animatorControllerMurena = animator.runtimeAnimatorController;
+        audioSource = transform.GetComponent<AudioSource>();
+        playerAudioSource = target.transform.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,11 +54,17 @@ public class MurenaAttack : MonoBehaviour
         {
             if(animator.runtimeAnimatorController != electicMurena)
 			{
+                audioSource.clip = murenaElectrified;
+                audioSource.loop = true;
+                audioSource.Play();
                 animator.runtimeAnimatorController = electicMurena;
             }
         }
         else if(animator.runtimeAnimatorController != animatorControllerMurena)
         {
+            audioSource.clip = null;
+            audioSource.loop = false;
+            audioSource.Stop();
             animator.runtimeAnimatorController = animatorControllerMurena;
         }
     }
@@ -72,9 +84,14 @@ public class MurenaAttack : MonoBehaviour
         playerAnimator.runtimeAnimatorController = electicPlayer;
         InputSystem.playerInputEnabled = false;
 
+        playerAudioSource.clip = playerElectrified;
+        playerAudioSource.volume = 0.1f;
+        playerAudioSource.Play();
+
         currentTimeAttackCooldown = 0f;
         yield return new WaitForSeconds(blockDuration);
 
+        playerAudioSource.volume = 1f;
         InputSystem.playerInputEnabled = true;
         playerAnimator.runtimeAnimatorController = playerAnimatorcontroller;
 

@@ -19,12 +19,6 @@ public class DialougeManager : MonoBehaviour
 
     static public DialougeManager instance;
 
-    private void Awake()
-    {
-        instance = this;
-        dialougeEnded = new UnityEvent();
-    }
-
     void Start()
     {
 
