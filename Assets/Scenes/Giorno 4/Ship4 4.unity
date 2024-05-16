@@ -709,11 +709,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602309741859944494, guid: 8f15f734c2864f6429993c1a0f779ad4, type: 3}
       propertyPath: dialouge.sentences.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4602309741859944494, guid: 8f15f734c2864f6429993c1a0f779ad4, type: 3}
       propertyPath: dialouge.sentences.Array.data[2]
-      value: Sono bloccato qui da giorni, dobbiamo trovare un modo per uscire.
+      value: Ti vedo stanco. Nel frattempo riposati qui.
       objectReference: {fileID: 0}
     - target: {fileID: 4602309741859944495, guid: 8f15f734c2864f6429993c1a0f779ad4, type: 3}
       propertyPath: m_RootOrder
@@ -761,6 +761,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f15f734c2864f6429993c1a0f779ad4, type: 3}
+--- !u!1 &310230160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4602309741859944482, guid: 8f15f734c2864f6429993c1a0f779ad4, type: 3}
+  m_PrefabInstance: {fileID: 310230159}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &310230161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310230160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e3e49cff863cd94d803853f6fe0d7a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &581474346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21292,11 +21309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3305262609285092149, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6.2
       objectReference: {fileID: 0}
     - target: {fileID: 3305262609285092149, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 3305262609285092149, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
       propertyPath: m_LocalPosition.z

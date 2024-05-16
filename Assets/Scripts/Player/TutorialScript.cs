@@ -93,6 +93,7 @@ public class TutorialScript : MonoBehaviour
 
         // GONFIAMENTO //
         InputSystem.playerInputEnabled = true;
+        InputSystem.dashEnabled = false;
         InputSystem.inflateEnabled = true;
 
         messageManager.ActiveMessage("Premi il pulsante spazio per gonfiarti e allontanare i nemici.");

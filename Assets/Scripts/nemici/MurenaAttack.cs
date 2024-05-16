@@ -16,11 +16,17 @@ public class MurenaAttack : MonoBehaviour
 
     Animator animator;
     RuntimeAnimatorController animatorControllerMurena;
+    SpriteRenderer playerSpriteRenderer;
+    Animator playerAnimator;
+    RuntimeAnimatorController playerAnimatorcontroller;
 
     // Start is called before the first frame update
     void Start()
     {
         target = PlayerMovement.active.gameObject;
+        playerSpriteRenderer = target.transform.GetComponent<SpriteRenderer>();
+        playerAnimator = target.transform.GetComponent<Animator>();
+        playerAnimatorcontroller = playerAnimator.runtimeAnimatorController;
         animator = transform.GetComponent<Animator>();
         animatorControllerMurena = animator.runtimeAnimatorController;
     }
@@ -63,10 +69,6 @@ public class MurenaAttack : MonoBehaviour
     {
         PlayerMovement.isAttacked = true;
 
-        SpriteRenderer playerSpriteRenderer = player.transform.GetComponent<SpriteRenderer>();
-        Animator playerAnimator = player.transform.GetComponent<Animator>();
-        RuntimeAnimatorController playerAnimatorcontroller = playerAnimator.runtimeAnimatorController;
-
         playerAnimator.runtimeAnimatorController = electicPlayer;
         InputSystem.playerInputEnabled = false;
 
@@ -78,5 +80,19 @@ public class MurenaAttack : MonoBehaviour
 
         PlayerMovement.isAttacked = false;
         PlayerMovement.active.Attack();
+    }
+
+    private void OnDestroy()
+    {
+        try
+        {
+            StopAllCoroutines();
+            InputSystem.playerInputEnabled = true;
+        }
+        catch (System.Exception) { }
+        finally
+        {
+            playerAnimator.runtimeAnimatorController = playerAnimatorcontroller;
+        }
     }
 }

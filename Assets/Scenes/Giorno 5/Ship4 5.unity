@@ -709,11 +709,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602309741859944494, guid: 8f15f734c2864f6429993c1a0f779ad4, type: 3}
       propertyPath: dialouge.sentences.Array.size
-      value: 2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602309741859944494, guid: 8f15f734c2864f6429993c1a0f779ad4, type: 3}
+      propertyPath: dialouge.sentences.Array.data[0]
+      value: Sei sveglio... Ho studiato un piano mentre dormivi.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602309741859944494, guid: 8f15f734c2864f6429993c1a0f779ad4, type: 3}
+      propertyPath: dialouge.sentences.Array.data[1]
+      value: Ho sbloccato il passaggio della stanza a fianco.
       objectReference: {fileID: 0}
     - target: {fileID: 4602309741859944494, guid: 8f15f734c2864f6429993c1a0f779ad4, type: 3}
       propertyPath: dialouge.sentences.Array.data[2]
-      value: Sono bloccato qui da giorni, dobbiamo trovare un modo per uscire.
+      value: "La barca \xE8 fragile e l\xEC \xE8 presente un sua colonna portante
+        che se smossa potrebbe aprire l'uscita!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602309741859944494, guid: 8f15f734c2864f6429993c1a0f779ad4, type: 3}
+      propertyPath: dialouge.sentences.Array.data[3]
+      value: "A quel punto la barca croller\xE0 e noi dovremo essere agili."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602309741859944494, guid: 8f15f734c2864f6429993c1a0f779ad4, type: 3}
+      propertyPath: dialouge.sentences.Array.data[4]
+      value: Appena sei pronto possiamo partire.
       objectReference: {fileID: 0}
     - target: {fileID: 4602309741859944495, guid: 8f15f734c2864f6429993c1a0f779ad4, type: 3}
       propertyPath: m_RootOrder

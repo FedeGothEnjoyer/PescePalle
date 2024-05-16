@@ -12,7 +12,12 @@ public class MenùScript : MonoBehaviour
     [SerializeField] float animationSpeed;
     private float y;
 
-	private void Start()
+    private void Awake()
+    {
+
+    }
+
+    private void Start()
 	{
         y = title.position.y;
         DataSystem.LoadData();

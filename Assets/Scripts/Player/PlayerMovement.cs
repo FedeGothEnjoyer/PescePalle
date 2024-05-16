@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AnimationCurve textCurve;
     [SerializeField] float transitionDuration;
     [SerializeField] Text newDayText;
-    private int transitionStage = 0;
+    static public int transitionStage = 0;
     private float transitionTimer;
     [SerializeField] private bool newDayAnimation;
     private bool firstLoad = true;
@@ -87,6 +87,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        Screen.SetResolution(1152, 640, true);
+
         isInvincible = false;
         invincibleTimer = 0f;
         isAttacked = false;

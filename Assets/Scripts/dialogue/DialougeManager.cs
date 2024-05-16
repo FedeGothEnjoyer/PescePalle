@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DialougeManager : MonoBehaviour
@@ -12,13 +13,22 @@ public class DialougeManager : MonoBehaviour
     public Text dialougeText;
 
     public Animator animator;
+    public UnityEvent dialougeEnded;
 
     [HideInInspector] public Queue<string> sentences;
 
     static public DialougeManager instance;
 
+    private void Awake()
+    {
+        instance = this;
+        dialougeEnded = new UnityEvent();
+    }
+
     void Start()
     {
+
+
         if (instance != null && instance != this)
 		{
             Destroy(gameObject);
@@ -30,7 +40,7 @@ public class DialougeManager : MonoBehaviour
 
 	public void StartDialouge(Dialouge dialouge)
     {
-        if (EnemyManager.chasingCount != 0)
+        if (PlayerMovement.isAttacked || PlayerMovement.transitionStage != 0)
             return;
 
         if (nameText == null) nameText = GameObject.Find("Name").GetComponent<Text>();
@@ -72,6 +82,8 @@ public class DialougeManager : MonoBehaviour
 
     void EndDialouge()
     {
+        Debug.Log("end dialouge");
+        dialougeEnded.Invoke();
         //Sblocca l'input
         InputSystem.dialogueEnabled = false;
         InputSystem.playerInputEnabled = true;
