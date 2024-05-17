@@ -162,7 +162,7 @@ Transform:
   - {fileID: 220470910}
   - {fileID: 1142399821}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &220470909
 PrefabInstance:
@@ -306,7 +306,7 @@ Transform:
   m_LocalScale: {x: 79.49, y: 63.95, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &802038052
 PrefabInstance:
@@ -445,7 +445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: target
-      value: Ocean4.5 5
+      value: Ocean4.5b 5
       objectReference: {fileID: 0}
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: spawnPosition.x
@@ -992,6 +992,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piranha
       objectReference: {fileID: 0}
+    - target: {fileID: 6953716259760272534, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
+      propertyPath: m_IsCustomRangeActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f18ee4ebc6cec124a8fd179974ca31d4, type: 3}
 --- !u!4 &1476336066 stripped
@@ -1008,7 +1012,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6831311961697775456, guid: 3d8ea7f9fd6af26448a1a737d3f1d016, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6831311961697775456, guid: 3d8ea7f9fd6af26448a1a737d3f1d016, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1108,7 +1112,7 @@ Transform:
   - {fileID: 1193099696}
   - {fileID: 847445876}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1494300721
 TilemapRenderer:
@@ -34988,7 +34992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5940810052029586414, guid: 92887ea8d84a4544d904306b783529f8, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5940810052029586414, guid: 92887ea8d84a4544d904306b783529f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35068,7 +35072,7 @@ Transform:
   - {fileID: 1697388354}
   - {fileID: 2108425028}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1686677969
 PrefabInstance:
@@ -35139,6 +35143,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1684410123}
     m_Modifications:
+    - target: {fileID: 6997232162437783917, guid: 7d91abda76fdfcb4db26674939399db4, type: 3}
+      propertyPath: m_IsCustomRangeActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7776508010997143926, guid: 7d91abda76fdfcb4db26674939399db4, type: 3}
       propertyPath: m_Name
       value: PiranhaCorrotto
@@ -35451,7 +35459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 724210128381066164, guid: 6e24a9ef87b914d48813a1dd419dcdbf, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 724210128381066164, guid: 6e24a9ef87b914d48813a1dd419dcdbf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35502,6 +35510,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1684410123}
     m_Modifications:
+    - target: {fileID: 1011869343247954580, guid: ef0d5254bc489184fad9c7e1dcdc5e28, type: 3}
+      propertyPath: m_IsCustomRangeActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8999441943533663874, guid: ef0d5254bc489184fad9c7e1dcdc5e28, type: 3}
       propertyPath: m_Name
       value: PescioneCorrotto
@@ -35564,6 +35576,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1684410123}
     m_Modifications:
+    - target: {fileID: 6997232162437783917, guid: 7d91abda76fdfcb4db26674939399db4, type: 3}
+      propertyPath: m_IsCustomRangeActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7776508010997143926, guid: 7d91abda76fdfcb4db26674939399db4, type: 3}
       propertyPath: m_Name
       value: PiranhaCorrotto (1)
@@ -35619,3 +35635,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7776508010997143930, guid: 7d91abda76fdfcb4db26674939399db4, type: 3}
   m_PrefabInstance: {fileID: 2122272095}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8132259838361893894
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8540200609239419013, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: m_Name
+      value: MedusaNero
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419016, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419016, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.241088
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419016, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.5101075
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419016, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419016, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419016, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419016, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419016, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419016, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419016, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419016, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419017, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: dialouge.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419017, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: dialouge.sentences.Array.data[0]
+      value: Sei vivo!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419017, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: dialouge.sentences.Array.data[1]
+      value: Ho visto quell'enorme bestia bloccare il passaggio e temevo non ce l'avessi
+        fatta *coff coff*.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540200609239419017, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}
+      propertyPath: dialouge.sentences.Array.data[2]
+      value: Tu invece sarai sempre il benvenuto!
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 317203c4456740f46819b57c8b3a0de2, type: 3}

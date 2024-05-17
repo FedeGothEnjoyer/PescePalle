@@ -70,7 +70,6 @@ public class DialougeManager : MonoBehaviour
 
     void EndDialouge()
     {
-        Debug.Log("end dialouge");
         dialougeEnded.Invoke();
         //Sblocca l'input
         InputSystem.dialogueEnabled = false;

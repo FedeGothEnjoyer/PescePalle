@@ -288,6 +288,8 @@ public class PlayerMovement : MonoBehaviour
         maxSpeed *= infl_speed_reduce;
         speed *= infl_speed_reduce;
         dashSpeed = 0;
+
+        InputSystem.dashEnabled = false;
     }
 
     private void StopInflate()
@@ -301,6 +303,8 @@ public class PlayerMovement : MonoBehaviour
         maxSpeed = startMaxSpeed;
         speed = startSpeed;
         dashSpeed = startDashSpeed;
+
+        InputSystem.dashEnabled = true;
     }
 
 

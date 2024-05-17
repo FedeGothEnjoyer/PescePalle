@@ -192,11 +192,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoutingRange: 0.5
   changeIdlePositionRate: 3
-  chaseDistance: 5
+  chaseDistance: 7
   maxDistanceFromStart: 15
   pushBackMagnitude: 10
   pushBackMagnitudeReduceForPlayer: 0.6
-  pushBackDurationPlayer: 1
+  pushBackDurationPlayer: 0.5
   pushBackDurationEnemy: 1
   pushedBackEnemy: {fileID: 21300000, guid: 6ff7aa58456a95048b2541975c63ab29, type: 3}
   isPushedBack: 0
@@ -286,9 +286,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyPushDuration: 0.5
-  PlayerPushDuration: 0.6
-  attackMagnitude: 10
-  pushbackPlayerMultiplier: 4
+  PlayerPushDuration: 0.2
+  attackMagnitude: 6
+  pushbackPlayerMultiplier: 3
   enemyManager: {fileID: 8999441943533663881}
 --- !u!1001 &6929461384822158977
 PrefabInstance:

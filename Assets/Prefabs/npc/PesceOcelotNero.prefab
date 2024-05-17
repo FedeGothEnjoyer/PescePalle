@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 2560073921018142732}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07b0f374161bde84db3e8dc23f17d710, type: 2}
+  m_Controller: {fileID: 9100000, guid: 64b6d975c1a83454e83e14125e18a67f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -123,11 +123,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   distanceForSelect: 200
+  triggerOnLoad: 0
   dialouge:
     name: Pesce Ocelot
     sentences:
-    - Alla fine l'oggetto gigante non era amichevole.
-    - Faccio fatica a muovermi!
+    - Amico mio tutto bene?
+    - "Hai trovato del cibo? Sta diventando sempre pi\xF9 difficile trovarlo."
 --- !u!61 &2560073921018142727
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -138,7 +139,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

@@ -62,7 +62,6 @@ public class InteractableBehaviour : MonoBehaviour
 			isSelected = true;
             animator.runtimeAnimatorController = selected;
         }
-		Debug.Log(InputSystem.playerMovementEnabled);
 	}
 
 	private void OnMouseExit()
