@@ -12,7 +12,7 @@ public class ShipLightInteractor : MonoBehaviour
 
 	private void Start()
 	{
-		
+		Enable(new Scene(), LoadSceneMode.Single);
 		
 		lightNumber = 0;
 		shadowNumber = 0;
