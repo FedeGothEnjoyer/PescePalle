@@ -49,8 +49,8 @@ public class ShipLightInteractor : MonoBehaviour
 
 	private void Spotted()
 	{
-		Camera.main.GetComponent<AudioSource>().clip = spottedSound;
-		Camera.main.GetComponent<AudioSource>().Play();
+		PlayerMovement.active.GetComponent<AudioSource>().clip = spottedSound;
+		PlayerMovement.active.GetComponent<AudioSource>().Play();
 		GetComponent<PlayerMovement>().ChangingRoom(new Vector2(-20f, 0.34f), false, SceneManager.GetActiveScene().name, false, "");
 	}
 

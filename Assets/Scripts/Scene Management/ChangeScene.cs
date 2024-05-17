@@ -10,11 +10,13 @@ public class ChangeScene : MonoBehaviour
     [SerializeField] bool flipped;
     [SerializeField] bool versoTana;
     [SerializeField] string newDayTarget;
+    [SerializeField] bool forceNewDay = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6)
         {
+            if (forceNewDay) FoodManager.foodTaken = 2;
             FindObjectOfType<PlayerMovement>().ChangingRoom(spawnPosition, flipped, target, versoTana, newDayTarget);
         }
     }

@@ -26,7 +26,7 @@ public class DialougeManager : MonoBehaviour
 
 	public void StartDialouge(Dialouge dialouge)
     {
-        if (PlayerMovement.isAttacked || PlayerMovement.transitionStage != 0)
+        if (PlayerMovement.isAttacked || PlayerMovement.transitionStage == 1)
             return;
 
         if (nameText == null) nameText = GameObject.Find("Name").GetComponent<Text>();
@@ -36,6 +36,8 @@ public class DialougeManager : MonoBehaviour
         animator = GameObject.Find("DialougeBox").GetComponent<Animator>();
         animator.SetBool("IsOpen", true);
         nameText.text = dialouge.name;
+
+        
 
         sentences.Clear();
         foreach (string sentence in dialouge.sentences)

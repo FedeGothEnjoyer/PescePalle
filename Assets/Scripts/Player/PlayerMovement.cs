@@ -70,12 +70,15 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         //singleton check
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(gameObject);
         if (active != null && active != this) DestroyImmediate(gameObject);
         else
         {
             active = this;
             DialougeManager.instance = GetComponentInChildren<DialougeManager>();
+            render = GetComponent<SpriteRenderer>();
+            animator = GetComponent<Animator>();
+            audioSource = GetComponent<AudioSource>();
             transitionStage = 2;
             transitionTimer = 0.5f * transitionDuration;
             firstLoad = true;
@@ -95,9 +98,7 @@ public class PlayerMovement : MonoBehaviour
         invincibleTimer = 0f;
         isAttacked = false;
         targetPos = transform.position;
-        render = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        
         startSpeed = speed;
         startMaxSpeed = maxSpeed;
         startDashSpeed = dashSpeed;
@@ -108,18 +109,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-		if (isInvincible)
-		{
+        if (isInvincible)
+        {
             invincibleTimer += Time.deltaTime;
-            if(invincibleTimer >= invincibleTime)
-			{
+            if (invincibleTimer >= invincibleTime)
+            {
                 isInvincible = false;
-			}
-		}
+            }
+        }
         if (transitionStage != 0)
         {
-			if (destructionPass)
-			{
+            if (destructionPass)
+            {
                 foreach (FoodScript food in FindObjectsByType<FoodScript>(FindObjectsSortMode.InstanceID))
                 {
                     foreach (Vector2 v in foodPositions)
@@ -127,17 +128,17 @@ public class PlayerMovement : MonoBehaviour
                         if ((int)v.x == (int)food.transform.position.x && (int)v.y == (int)food.transform.position.y) DestroyImmediate(food.gameObject);
                     }
                 }
-                foreach(ParticleSystem p in GetComponentsInChildren<ParticleSystem>())
-				{
+                foreach (ParticleSystem p in GetComponentsInChildren<ParticleSystem>())
+                {
                     p.Clear();
-				}
+                }
                 destructionPass = false;
             }
             transitionTimer += Time.deltaTime;
-            if(newDayAnimation || firstLoad) transitionTimer -= Time.deltaTime * 0.75f;
+            if (newDayAnimation || firstLoad) transitionTimer -= Time.deltaTime * 0.75f;
             Color color = blackFade.color;
             color.a = fadeCurve.Evaluate(transitionTimer / transitionDuration);
-			if (newDayAnimation && SceneManager.GetActiveScene().name != "Tuto")
+            if (newDayAnimation && (SceneManager.GetActiveScene().name != "Tuto" || c_targetScene == "Tana"))
 			{
                 Color colorT = newDayText.color;
                 colorT.a = textCurve.Evaluate(transitionTimer / transitionDuration);
@@ -310,6 +311,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void ChangingRoom(Vector2 spawnPos, bool flipped, string targetScene, bool versoTana, string newDayTarget)
     {
+        if (transitionStage != 0) return;
         transitionTimer = 0;
         transitionStage = 1;
         c_spawnPos = spawnPos;

@@ -14,6 +14,8 @@ public class InteractableBehaviour : MonoBehaviour
 	[SerializeField] AnimatorOverrideController selected;
 	[SerializeField] UnityEvent onClickEvent;
 	[SerializeField] float distanceForSelect = 200f;
+	[SerializeField] bool triggerOnLoad = false;
+	private bool first = true;
 
 	public Dialouge dialouge;
 	private Vector2 targetPosition;
@@ -21,17 +23,28 @@ public class InteractableBehaviour : MonoBehaviour
 
 	// Start is called before the first frame update
 	void Start()
-    {
-        animator = GetComponent<Animator>();
+	{
+		animator = GetComponent<Animator>();
 		collision = GetComponent<BoxCollider2D>();
-        render = GetComponent<SpriteRenderer>();
+		render = GetComponent<SpriteRenderer>();
 		target = PlayerMovement.active.gameObject;
 		dialogue = GameObject.Find("DialougeManager").GetComponent<DialougeManager>();
 		notSelected = animator.runtimeAnimatorController;
+		first = true;
 	}
 
     private void Update()
     {
+		if(triggerOnLoad && first)
+		{
+			InputSystem.dialogueEnabled = true;
+			dialogue.StartDialouge(dialouge);
+			InputSystem.enemyMovementEnabled = false;
+			InputSystem.playerInputEnabled = false;
+			first = false;
+			dialogue.DisplayNextSentence();
+		}
+
         targetPosition = target.transform.position;
         render.flipX = targetPosition.x < transform.position.x;
 
@@ -41,6 +54,7 @@ public class InteractableBehaviour : MonoBehaviour
 		else
             animator.runtimeAnimatorController = notSelected;
     }
+
     private void OnMouseEnter()
 	{
 		if (InputSystem.selectedInteractableEnabled)
@@ -48,7 +62,7 @@ public class InteractableBehaviour : MonoBehaviour
 			isSelected = true;
             animator.runtimeAnimatorController = selected;
         }
-			
+		Debug.Log(InputSystem.playerMovementEnabled);
 	}
 
 	private void OnMouseExit()
