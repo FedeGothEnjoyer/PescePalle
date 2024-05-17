@@ -302,6 +302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: light
       objectReference: {fileID: 0}
+    - target: {fileID: 7935489483325735957, guid: 1353d39fc5c520e4c8e02694678dbd46, type: 3}
+      propertyPath: m_FrontSortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7935489483325735959, guid: 1353d39fc5c520e4c8e02694678dbd46, type: 3}
       propertyPath: m_RootOrder
       value: 0

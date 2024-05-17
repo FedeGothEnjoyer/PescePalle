@@ -21,14 +21,6 @@ public class DialougeManager : MonoBehaviour
 
     void Start()
     {
-
-
-        if (instance != null && instance != this)
-		{
-            Destroy(gameObject);
-            return;
-		}
-        instance = this;
         sentences = new Queue<string>();
     }
 

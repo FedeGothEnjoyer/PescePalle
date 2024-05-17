@@ -75,7 +75,7 @@ public class MessageManager : MonoBehaviour
         messageText.enabled = false;
     }
 
-    IEnumerator ShowMessage(string message)
+    public IEnumerator ShowMessage(string message)
     {
         messageText.text = message;
         messageText.enabled = true;

@@ -75,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             active = this;
+            DialougeManager.instance = GetComponentInChildren<DialougeManager>();
             transitionStage = 2;
             transitionTimer = 0.5f * transitionDuration;
             firstLoad = true;
@@ -136,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
             if(newDayAnimation || firstLoad) transitionTimer -= Time.deltaTime * 0.75f;
             Color color = blackFade.color;
             color.a = fadeCurve.Evaluate(transitionTimer / transitionDuration);
-			if (newDayAnimation)
+			if (newDayAnimation && SceneManager.GetActiveScene().name != "Tuto")
 			{
                 Color colorT = newDayText.color;
                 colorT.a = textCurve.Evaluate(transitionTimer / transitionDuration);

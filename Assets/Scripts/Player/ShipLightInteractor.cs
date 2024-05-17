@@ -8,9 +8,12 @@ public class ShipLightInteractor : MonoBehaviour
 	[SerializeField] AudioClip spottedSound;
 	[SerializeField] int lightNumber;
 	[SerializeField] int shadowNumber;
+	SpriteMask mask;
 
 	private void Start()
 	{
+		
+		
 		lightNumber = 0;
 		shadowNumber = 0;
 		SceneManager.activeSceneChanged += ValueReset;
@@ -27,6 +30,8 @@ public class ShipLightInteractor : MonoBehaviour
 		{
 			shadowNumber++;
 		}
+		SceneManager.sceneLoaded += Enable;
+		SceneManager.sceneUnloaded += Disable;
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
@@ -53,5 +58,19 @@ public class ShipLightInteractor : MonoBehaviour
 	{
 		lightNumber = 0;
 		shadowNumber = 0;
+	}
+
+	private void Enable(Scene s, LoadSceneMode l)
+	{
+		if (FindFirstObjectByType<shipLightBehaviour>() != null)
+		{
+			mask = PlayerMovement.active.GetComponentInChildren<SpriteMask>();
+			mask.enabled = false;
+		}
+	}
+
+	private void Disable(Scene s)
+	{
+		if(mask != null) mask.enabled = true;
 	}
 }

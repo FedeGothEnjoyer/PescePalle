@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Giorno 1/Ocean0.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Giorno 5/Ship2b 5.unity
+    guid: f539c4a1985dd1e4aa4692c4b20983e8
+  - enabled: 1
+    path: Assets/Scenes/Giorno 5/Ship5b 5.unity
+    guid: fe0b23692d302544e926a51ca7aaaf4b
+  - enabled: 1
     path: Assets/Scenes/Giorno 4/Ship4 4.unity
     guid: 370a31ae071f3a54fb53b87cbce100ba
   - enabled: 1

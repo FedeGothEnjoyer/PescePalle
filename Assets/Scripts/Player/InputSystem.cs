@@ -43,9 +43,9 @@ public class InputSystem : MonoBehaviour
 
             bool hitUI = false;
 
-            UnityEngine.UI.Button[] buttons = FindObjectsOfType<UnityEngine.UI.Button>();
+            Button[] buttons = FindObjectsOfType<UnityEngine.UI.Button>();
             // Check if any UI button contains the point
-            foreach (UnityEngine.UI.Button button in buttons)
+            foreach (Button button in buttons)
             {
                 // Get the RectTransform of the button
                 RectTransform rectTransform = button.GetComponent<RectTransform>();
