@@ -76,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
         {
             active = this;
             DialougeManager.instance = GetComponentInChildren<DialougeManager>();
+            MusicScript.instance = GetComponentInChildren<MusicScript>();
             render = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
             audioSource = GetComponent<AudioSource>();
@@ -253,6 +254,7 @@ public class PlayerMovement : MonoBehaviour
         if (dashTimer >= dashFrequency)
         {
             audioSource.clip = dashSound;
+            audioSource.volume = 1;
             audioSource.Play();
             dashTimer = 0;
             var vec = target - (Vector2)transform.position;
@@ -282,6 +284,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isInflated = true;
         audioSource.clip = inflateSound;
+        audioSource.volume = 1;
         audioSource.Play();
 
         InflateCooldownTimer = 0;
