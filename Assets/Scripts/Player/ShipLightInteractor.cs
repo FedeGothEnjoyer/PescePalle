@@ -16,7 +16,7 @@ public class ShipLightInteractor : MonoBehaviour
 		
 		lightNumber = 0;
 		shadowNumber = 0;
-		SceneManager.activeSceneChanged += ValueReset;
+		SceneManager.sceneLoaded += ValueReset;
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -55,7 +55,7 @@ public class ShipLightInteractor : MonoBehaviour
         GetComponent<PlayerMovement>().ChangingRoom(new Vector2(-20f, 0.34f), false, SceneManager.GetActiveScene().name, false, "");
 	}
 
-	private void ValueReset(Scene s1, Scene s2)
+	private void ValueReset(Scene s1, LoadSceneMode l)
 	{
 		lightNumber = 0;
 		shadowNumber = 0;
