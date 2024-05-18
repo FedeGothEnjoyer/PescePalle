@@ -176,19 +176,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[0]
-      value: Fabio guarda dietro di te
+      value: Hey, come ti ho detto ieri abbiamo finito il cibo.
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[1]
-      value: :3
+      value: "Mi sento sempre pi\xF9 debole, devi trovare qualcosa..."
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[2]
-      value: Riusciresti a portare 3 pezzi di cibo og-
+      value: Ti prego, stai attento e torna il prima possibile!
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[3]
@@ -874,7 +874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7135783882516421780, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: target
-      value: Ocean0 4
+      value: Ocean0 7
       objectReference: {fileID: 0}
     - target: {fileID: 7135783882516421781, guid: 5adab31cf71fbf5428dd81bacef7b25d, type: 3}
       propertyPath: m_RootOrder

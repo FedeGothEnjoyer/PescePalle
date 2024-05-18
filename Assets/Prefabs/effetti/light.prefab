@@ -76,11 +76,11 @@ SpriteMask:
   m_MaskAlphaCutoff: 0.65
   m_FrontSortingLayerID: -598773519
   m_BackSortingLayerID: -598773519
-  m_FrontSortingLayer: -2
-  m_BackSortingLayer: -2
+  m_FrontSortingLayer: 1
+  m_BackSortingLayer: 1
   m_FrontSortingOrder: 0
   m_BackSortingOrder: 0
-  m_IsCustomRangeActive: 1
+  m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7935489483325735958
 MonoBehaviour:

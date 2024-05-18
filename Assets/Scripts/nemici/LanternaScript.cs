@@ -92,7 +92,7 @@ public class LanternaScript : MonoBehaviour
             lightOverlay.color = Color.Lerp(lightOverlay.color, newLightColor, lightTransitionSpeed * Time.deltaTime);
             yield return null;
         }
-        lightOverlay.gameObject.SetActive(false);
+        lightOverlay.color = newLightColor;
 
         InputSystem.playerInputEnabled = true;
         aiPath.canMove = true;

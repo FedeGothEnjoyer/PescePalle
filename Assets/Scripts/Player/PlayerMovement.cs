@@ -84,6 +84,8 @@ public class PlayerMovement : MonoBehaviour
             firstLoad = true;
             foodPositions = new List<Vector2>();
             CurrentData.shipFallen = false;
+            CurrentData.pescePetrolioEvent = false;
+            CurrentData.pescePetrolioBlink = false;
             newDayText.text = "GIORNO " + CurrentData.day;
             FoodManager.foodTaken = 0;
         }

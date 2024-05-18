@@ -18,6 +18,36 @@ EditorBuildSettings:
     path: Assets/Scenes/Giorno 5-6/Ship2b 5.unity
     guid: f539c4a1985dd1e4aa4692c4b20983e8
   - enabled: 1
+    path: Assets/Scenes/Giorno 7/Ocean0 7.unity
+    guid: d9649d0f1fbcd864aa88b024a652d883
+  - enabled: 1
+    path: Assets/Scenes/Giorno 7/Ocean2 7.unity
+    guid: a0d3aebfe99f94341a782db6e2313cdf
+  - enabled: 1
+    path: Assets/Scenes/Giorno 7/Ocean3 7.unity
+    guid: 1f709512351516540b162a9fcd083a40
+  - enabled: 1
+    path: Assets/Scenes/Giorno 7/Ocean4 7.unity
+    guid: cf3b66a6cbb95a248a65e4d88c1df371
+  - enabled: 1
+    path: Assets/Scenes/Giorno 7/Ocean4.5b 7.unity
+    guid: c1eb2ad70ff921643af132ddf6efeba1
+  - enabled: 1
+    path: Assets/Scenes/Giorno 7/Ocean5 7.unity
+    guid: 37ccb9a1bc1eb294f96f41607775a272
+  - enabled: 1
+    path: Assets/Scenes/Giorno 7/Ocean6 7.unity
+    guid: a7f44cda45678144c8cfaef439361a4b
+  - enabled: 1
+    path: Assets/Scenes/Giorno 7/Ocean7 7.unity
+    guid: 84dc9275c2be4a2418c602f0320dfb81
+  - enabled: 1
+    path: Assets/Scenes/Giorno 5-6/Ocean5 5.unity
+    guid: 89043484d652ee948a9ec8063bdc34ff
+  - enabled: 1
+    path: Assets/Scenes/Giorno 5-6/Ocean6 5.unity
+    guid: dfc9dee535a6425499dcaceb50ef5bb7
+  - enabled: 1
     path: Assets/Scenes/Giorno 5-6/Ship5b 5.unity
     guid: fe0b23692d302544e926a51ca7aaaf4b
   - enabled: 1

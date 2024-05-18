@@ -1,5 +1,5 @@
 sceneSetups:
-- path: "Assets/Scenes/Men\xF9.unity"
+- path: Assets/Scenes/Giorno 7/Ocean0 7.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
