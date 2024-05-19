@@ -14,7 +14,7 @@ public class tartarugaEarthquakeTrigger : MonoBehaviour
     {
         if(dialogue.sentences.Count == 1)
 		{
-            Camera.main.GetComponent<CameraShake>().Shake(100f);
+            Camera.main.GetComponent<CameraShake>().Shake(1000f);
             Destroy(this);
 		}
     }

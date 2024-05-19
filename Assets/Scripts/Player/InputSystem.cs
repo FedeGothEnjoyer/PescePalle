@@ -15,6 +15,7 @@ public class InputSystem : MonoBehaviour
     static public bool playerMovementEnabled; //tutorial
     static public bool dashEnabled;
     static public bool inflateEnabled;
+    static public bool clickEnabled;
 
     static public DialougeManager dialogue;
 
@@ -22,7 +23,7 @@ public class InputSystem : MonoBehaviour
     public void Start()
     {
         playerInputEnabled = true;
-
+        clickEnabled = true;
         playerMovementEnabled = true;
         enemyMovementEnabled = true;
         dialogueEnabled = false;
@@ -37,6 +38,8 @@ public class InputSystem : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if (!clickEnabled) return;
+
         if (Input.GetMouseButtonDown(0))
 		{
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
