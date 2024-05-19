@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
+    private bool lastInput;
     public void SaveAndQuit()
     {
         InputSystem.playerInputEnabled = true;
@@ -17,6 +18,7 @@ public class PauseScript : MonoBehaviour
 
     public void PauseGame()
     {
+        lastInput = InputSystem.playerInputEnabled;
         InputSystem.playerInputEnabled = false;
         InputSystem.selectedInteractableEnabled = false;
         Time.timeScale = 0;
@@ -24,7 +26,7 @@ public class PauseScript : MonoBehaviour
 
     public void ResumeGame()
     {
-        InputSystem.playerInputEnabled = true;
+        InputSystem.playerInputEnabled = lastInput;
         InputSystem.selectedInteractableEnabled = true;
         Time.timeScale = 1;
     }

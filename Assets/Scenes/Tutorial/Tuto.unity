@@ -33804,6 +33804,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8916416653972229637, guid: 73a10aed5afb75f48a54a831c51b929a, type: 3}
   m_PrefabInstance: {fileID: 70790076}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1653119247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3527094064839559523, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+  m_PrefabInstance: {fileID: 3305262608350645195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1653119250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653119247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee36226f39d1a6a418e26d1d33c27adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1674895364 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3851422933518753513, guid: af2819bfa0847ee43b6daf7080a5fc9b, type: 3}
@@ -34333,6 +34350,18 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2971932946253865965, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971932946253865965, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2971932946253865965, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3305262609285092149, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -34380,6 +34409,42 @@ PrefabInstance:
     - target: {fileID: 3305262609285092156, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6134025078530218265, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6134025078530218265, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6134025078530218265, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1653119250}
+    - target: {fileID: 6134025078530218265, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6134025078530218265, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6134025078530218265, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VolumeScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6134025078530218265, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950600492089510740, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6950600492089510740, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bccc0cab199d8b44ea34d3ccc7498831, type: 3}
