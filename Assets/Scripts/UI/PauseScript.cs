@@ -21,6 +21,7 @@ public class PauseScript : MonoBehaviour
         lastInput = InputSystem.playerInputEnabled;
         InputSystem.playerInputEnabled = false;
         InputSystem.selectedInteractableEnabled = false;
+        InputSystem.paused = true;
         Time.timeScale = 0;
     }
 
@@ -28,6 +29,7 @@ public class PauseScript : MonoBehaviour
     {
         InputSystem.playerInputEnabled = lastInput;
         InputSystem.selectedInteractableEnabled = true;
+        InputSystem.paused = false;
         Time.timeScale = 1;
     }
 }

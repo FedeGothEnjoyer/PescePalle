@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class InputSystem : MonoBehaviour
 {
     static public PlayerMovement player;
+    static public bool paused;
     static public bool playerInputEnabled;
     static public bool dialogueEnabled;
     static public bool enemyMovementEnabled;
@@ -22,6 +23,7 @@ public class InputSystem : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        paused = false;
         playerInputEnabled = true;
         clickEnabled = true;
         playerMovementEnabled = true;
@@ -38,7 +40,7 @@ public class InputSystem : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (!clickEnabled) return;
+        if (!clickEnabled || paused) return;
 
         if (Input.GetMouseButtonDown(0))
 		{
@@ -76,7 +78,7 @@ public class InputSystem : MonoBehaviour
                 else player.MoveToPosition(mousePos);
             }
 
-            if (dialogueEnabled)
+            if (!hitUI && dialogueEnabled)
 			{
                 if (dialogue == null) dialogue = GameObject.Find("DialougeManager").GetComponent<DialougeManager>();
                 dialogue.DisplayNextSentence();
