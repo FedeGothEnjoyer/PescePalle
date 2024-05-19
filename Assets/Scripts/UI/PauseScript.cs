@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class PauseScript : MonoBehaviour
 {
     private bool lastInput;
+    private bool message = false;
+    GameObject messageUI;
+    private void Start()
+    {
+        messageUI = GameObject.Find("Message");
+    }
     public void SaveAndQuit()
     {
         InputSystem.playerInputEnabled = true;
@@ -18,6 +24,12 @@ public class PauseScript : MonoBehaviour
 
     public void PauseGame()
     {
+        if (messageUI.activeSelf && SceneManager.GetActiveScene().name == "Tuto")
+        {
+            messageUI.SetActive(false);
+            message = true;
+        }
+
         lastInput = InputSystem.playerInputEnabled;
         InputSystem.playerInputEnabled = false;
         InputSystem.selectedInteractableEnabled = false;
@@ -27,6 +39,12 @@ public class PauseScript : MonoBehaviour
 
     public void ResumeGame()
     {
+        if (message)
+        {
+            messageUI.SetActive(true);
+            message = false;
+        }
+
         InputSystem.playerInputEnabled = lastInput;
         InputSystem.selectedInteractableEnabled = true;
         InputSystem.paused = false;

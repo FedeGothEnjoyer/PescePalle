@@ -98,9 +98,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Giorno 4/Tana 4 2.unity
     guid: 82ceee66f99a0e64287fab6479c49b57
-  - enabled: 1
-    path: Assets/Scenes/Finale.unity
-    guid: 8c105bb610a80fc499c2856bbb0299a8
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Giorno 3/Ocean0 3.unity
     guid: 5063c840b8dccd04c9156d24035ce66d
@@ -191,4 +191,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Giorno 8/FINALE.unity
     guid: 72e6e1977d7712349b57493c0f0655c5
+  - enabled: 1
+    path: Assets/Scenes/Giorno 8/FINALE 3.unity
+    guid: ef59338d261666a4697e23854ecf427f
   m_configObjects: {}

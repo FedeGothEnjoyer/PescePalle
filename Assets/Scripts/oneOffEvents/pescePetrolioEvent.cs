@@ -26,6 +26,7 @@ public class pescePetrolioEvent : MonoBehaviour
             startPos = transform.position;
             StartCoroutine(Animation());
             Camera.main.GetComponent<CameraShake>().Shake(time);
+            GetComponent<AudioSource>().Play();
         }
         CurrentData.pescePetrolioEvent = true;
     }

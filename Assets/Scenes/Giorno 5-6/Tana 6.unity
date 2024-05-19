@@ -786,7 +786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[2]
-      value: Ti consiglio di cercare attentamente in posti non visitati, con attenzione..
+      value: Ti consiglio di cercare in posti non visitati, con attenzione..
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497506, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: m_Name

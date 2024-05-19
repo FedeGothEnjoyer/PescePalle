@@ -176,15 +176,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[0]
-      value: Hey, come ti ho detto ieri abbiamo finito il cibo.
+      value: "Mi sento sempre pi\xF9 debole, devi trovare del cibo..."
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[1]
-      value: "Mi sento sempre pi\xF9 debole, devi trovare qualcosa..."
+      value: Ti prego, stai attento e torna il prima possibile!
       objectReference: {fileID: 0}
     - target: {fileID: 1884251737937497505, guid: f0e0c296764c6ef47b81b889d1ded4f9, type: 3}
       propertyPath: dialouge.sentences.Array.data[2]

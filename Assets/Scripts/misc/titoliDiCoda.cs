@@ -16,7 +16,7 @@ public class titoliDiCoda : MonoBehaviour
     void Start()
     {
         t = GetComponent<RectTransform>();
-        Destroy(PlayerMovement.active);
+        Destroy(PlayerMovement.active.gameObject);
         StartCoroutine(Scroll());
     }
 
@@ -32,6 +32,7 @@ public class titoliDiCoda : MonoBehaviour
             yield return null;
 		}
 
+        GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(3f);
         float timer = 0f;
 		while (background2.color.a < 1f)

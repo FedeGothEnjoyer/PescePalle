@@ -30802,6 +30802,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2560073921018142720, guid: 9bbbfc98714cf9a43bec04380fea8352, type: 3}
+      propertyPath: dialouge.sentences.Array.data[1]
+      value: "Hai trovato del cibo? Sta diventando sempre pi\xF9 difficile recuperarlo."
+      objectReference: {fileID: 0}
     - target: {fileID: 2560073921018142721, guid: 9bbbfc98714cf9a43bec04380fea8352, type: 3}
       propertyPath: m_RootOrder
       value: 1

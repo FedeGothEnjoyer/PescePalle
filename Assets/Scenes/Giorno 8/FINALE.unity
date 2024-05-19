@@ -2426,7 +2426,7 @@ MonoBehaviour:
   dialouge:
     name: Tartaruga Anziana
     sentences:
-    - Avvicinati..
+    - Avvicinati...
 --- !u!61 &1295221066
 BoxCollider2D:
   m_ObjectHideFlags: 0

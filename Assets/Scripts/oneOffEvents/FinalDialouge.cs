@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.ParticleSystem;
@@ -9,14 +8,13 @@ public class FinalDialouge : MonoBehaviour
 {
     [SerializeField] Dialouge dialouge;
     [SerializeField] Sprite newDialougeBox;
+    [SerializeField] AnimatorOverrideController chase;
     [SerializeField] float speedIncrement = 0.2f;
 
     DialougeManager dialougeManager;
     Animator animator;
 
     private bool musicReady = false;
-    private bool playerReady = false;
-
     void Start()
     {
         StartCoroutine(Execute());
@@ -86,7 +84,7 @@ public class FinalDialouge : MonoBehaviour
     {
         yield return null;
 
-        // while(!playerReady) yield return null;
+        animator.runtimeAnimatorController = chase;
 
         float speed = 0;
         while (true)
@@ -102,7 +100,8 @@ public class FinalDialouge : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GetComponent<Collider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponentInChildren<Collider2D>().enabled = true;
         StartCoroutine(Chasing());
     }
 }
